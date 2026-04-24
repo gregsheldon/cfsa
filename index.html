@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Banking Profit Audit</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <title>The Banking Profit Audit | Independent Financial Advocacy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #0f172a;
-            --accent: #d4af37; /* Financial Gold */
-            --profit: #10b981; /* Success Green */
-            --bg: #f1f5f9;
+            --accent: #b8974d; /* Refined Gold */
+            --profit: #10b981;
+            --loss: #e11d48;
+            --bg: #f8fafc;
             --white: #ffffff;
         }
 
@@ -18,238 +19,251 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg);
             color: var(--primary);
-            line-height: 1.7;
+            line-height: 1.6;
             margin: 0;
-            padding: 0;
         }
 
-        /* Attention Grabber Bar */
-        .top-bar {
+        .top-announcement {
             background: var(--primary);
-            color: var(--accent);
+            color: var(--white);
             text-align: center;
-            padding: 12px;
+            padding: 10px;
+            font-size: 0.8rem;
             font-weight: 700;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.85rem;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
 
-        /* Headline Section */
-        header {
-            text-align: center;
-            margin-bottom: 80px;
+        .sales-card {
+            background: var(--white);
+            padding: 60px;
+            border-radius: 4px;
+            box-shadow: 0 50px 100px -20px rgba(0,0,0,0.1);
+            border-top: 6px solid var(--accent);
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: 3.5rem;
             line-height: 1.1;
-            margin-bottom: 30px;
-            font-weight: 900;
-            letter-spacing: -1px;
+            margin-bottom: 20px;
+            color: var(--primary);
         }
 
-        .highlight-text {
-            color: var(--accent);
-            display: block;
+        .gold-text { color: var(--accent); }
+
+        /* Comparison Table Section */
+        .comparison-container {
+            margin: 50px 0;
+            background: #f1f5f9;
+            padding: 30px;
+            border-radius: 8px;
         }
 
-        /* The "Paper" Effect */
-        .sales-page {
-            background: var(--white);
-            padding: 80px;
-            border-radius: 4px;
-            box-shadow: 0 40px 100px rgba(15, 23, 42, 0.1);
-            position: relative;
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        /* Pop-out Box */
-        .stat-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
-            margin: 40px 0;
-        }
-
-        .stat-card {
+        .comparison-table th {
             background: var(--primary);
             color: white;
-            padding: 25px;
-            border-radius: 8px;
-            text-align: center;
-            border-bottom: 4px solid var(--accent);
+            padding: 15px;
+            text-align: left;
         }
 
-        .stat-card span {
-            display: block;
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-bottom: 10px;
-        }
-
-        .stat-card strong {
-            font-size: 1.5rem;
-            color: var(--accent);
-        }
-
-        /* Jay Abraham Style List */
-        .problem-list {
-            list-style: none;
-            padding: 0;
-            margin: 30px 0;
-        }
-
-        .problem-list li {
-            padding: 15px 0 15px 40px;
+        .comparison-table td {
+            padding: 15px;
             border-bottom: 1px solid #edf2f7;
-            position: relative;
-            font-size: 1.2rem;
             font-weight: 500;
         }
 
-        .problem-list li::before {
-            content: '✕';
-            position: absolute;
-            left: 0;
-            color: #e53e3e;
-            font-weight: bold;
+        .status-standard { color: var(--loss); font-weight: 700; }
+        .status-optimized { color: var(--profit); font-weight: 700; }
+
+        /* Insider Checklist */
+        .insider-box {
+            border: 2px solid #e2e8f0;
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 8px;
         }
 
-        .benefit-list li::before {
-            content: '✓';
-            color: var(--profit);
-        }
-
-        /* The Call to Action Card */
-        .cta-card {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            padding: 60px;
-            border-radius: 12px;
-            text-align: center;
-            margin-top: 60px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--accent);
-            color: var(--primary);
-            padding: 25px 50px;
-            border-radius: 4px;
-            font-weight: 800;
-            text-decoration: none;
-            font-size: 1.4rem;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-            background: #e5c169;
-        }
-
-        .no-risk-tag {
-            display: inline-block;
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--accent);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.9rem;
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
             margin-bottom: 20px;
         }
 
-        /* Responsive */
+        .checklist-icon {
+            color: var(--accent);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* Process Steps */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .step {
+            padding: 20px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+
+        .step-number {
+            background: var(--accent);
+            color: white;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        /* CTA Section */
+        .cta-box {
+            background: var(--primary);
+            color: white;
+            padding: 50px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .btn {
+            background: var(--accent);
+            color: white;
+            padding: 20px 40px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            border-radius: 4px;
+            display: inline-block;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn:hover { background: #9e7f3d; transform: translateY(-2px); }
+
         @media (max-width: 768px) {
-            .sales-page { padding: 30px; }
-            .stat-grid { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: 1fr; }
             h1 { font-size: 2.2rem; }
+            .sales-card { padding: 25px; }
         }
     </style>
 </head>
 <body>
 
-<div class="top-bar">Strictly for Businesses generating $2M – $50M in Annual Revenue</div>
+<div class="top-announcement">Fiducary-Level Advocacy for Independent Business Owners</div>
 
 <div class="container">
-    <header>
-        <h1>How Much Profit Is <span class="highlight-text">Quietly Being Taken</span> From Your Business… By Your Bank?</h1>
-    </header>
+    <div class="sales-card">
+        <header style="text-align: center; margin-bottom: 50px;">
+            <h1>How Much Profit Is <span class="gold-text">Quietly Being Taken</span> From Your Business… By Your Bank?</h1>
+            <p style="font-size: 1.3rem; color: #64748b;">Not stolen. Not mismanaged. <span style="color: var(--primary); font-weight: 700;">Simply… never questioned.</span></p>
+        </header>
 
-    <div class="sales-page">
-        <p style="font-size: 1.4rem; font-weight: 600; color: #64748b;">Not stolen. Not mismanaged. Simply… never questioned.</p>
+        <p>If your company does over <strong>$2M in revenue</strong>, this will matter more than almost anything you do this year. Banks are in the business of optimizing their profitability—not yours. And they are exceptionally good at it.</p>
 
-        <p>If your company does over <strong>$2M in revenue</strong>, this will matter more than almost anything you do this year.</p>
+        <div class="comparison-container">
+            <h3 style="margin-top: 0;">The Cost of "Standard" Banking</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Standard Business</th>
+                        <th>Optimized Business</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>LOC Interest Rate</td>
+                        <td class="status-standard">Prime + 1.25%</td>
+                        <td class="status-optimized">Prime + 0.25%</td>
+                    </tr>
+                    <tr>
+                        <td>Merchant Services</td>
+                        <td class="status-standard">Bundled Fees (Hidden)</td>
+                        <td class="status-optimized">Interchange Plus (Transparent)</td>
+                    </tr>
+                    <tr>
+                        <td>Treasury Management</td>
+                        <td class="status-standard">Flat Monthly Fees</td>
+                        <td class="status-optimized">Earnings Credit Offset</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-        <p>Because while most owners focus on increasing sales, improving operations, or cutting visible costs, there is a far more predictable, immediate, and measurable source of profit almost no one addresses:</p>
+        <p>This "leakage" typically represents <strong>1% to 3% of your total revenue.</strong> For a $10M company, that is <strong>$100,000 to $300,000</strong> in profit that is currently being sacrificed to the bank's bottom line.</p>
 
-        <h2 style="color: var(--accent); font-size: 2rem; border-left: 5px solid var(--primary); padding-left: 20px;">Your banking structure.</h2>
-
-        <p>Let’s be candid. Banks are not in the business of optimizing your profitability. They are in the business of optimizing theirs. And they are exceptionally good at it.</p>
-
-        <p><strong>What is the cost of not knowing?</strong></p>
-        <p>For most companies, the answer is 1% to 3% of total annual revenue. Every year. Quietly.</p>
-
-        <div class="stat-grid">
-            <div class="stat-card">
-                <span>$3M Revenue</span>
-                <strong>$30k – $90k</strong>
+        <div class="insider-box">
+            <h3 style="margin-top: 0;">Where the Leaks Are Usually Found</h3>
+            <div class="checklist-item">
+                <span class="checklist-icon">⬢</span>
+                <div><strong>Unbundled Merchant Service Fees:</strong> Hidden markups on interchange rates that inflate every transaction cost.</div>
             </div>
-            <div class="stat-card">
-                <span>$10M Revenue</span>
-                <strong>$100k – $300k</strong>
+            <div class="checklist-item">
+                <span class="checklist-icon">⬢</span>
+                <div><strong>Under-utilized Credits:</strong> Money left on the table because your sweep-account structure isn't working for you.</div>
             </div>
-            <div class="stat-card">
-                <span>$25M Revenue</span>
-                <strong>$250k – $750k</strong>
+            <div class="checklist-item">
+                <span class="checklist-icon">⬢</span>
+                <div><strong>Covenant Rigidity:</strong> Non-monetary "costs" that restrict your company's ability to pivot or grow.</div>
             </div>
         </div>
 
-        <p>This isn't theory. This is the <strong>leakage</strong> we consistently recover. Not by working harder or adding risk—but by correcting what already exists.</p>
+        <h3>Our Process: 2 to 5 Days to Total Clarity</h3>
+        <p>We don't represent the bank; we represent you. Our role is to identify, quantify, and secure improvements through a structured Banking Profit Audit.</p>
 
-        <h3>Why haven't you seen this before?</h3>
-        <ul class="problem-list">
-            <li>You assume the bank is already "taking care of you"</li>
-            <li>You don't have the "insider language" to challenge their fees</li>
-            <li>You lack the data to know what's actually negotiable (it almost all is)</li>
-        </ul>
-
-        <h3 style="margin-top: 50px;">The Solution: A Structured Banking Profit Audit</h3>
-        <p>We act as your independent agent. We don't represent the bank; we represent you. Here is exactly what we do:</p>
-        
-        <ul class="problem-list benefit-list">
-            <li>Review current arrangements in granular detail</li>
-            <li>Benchmark your rates against the hidden market reality</li>
-            <li>Identify specific areas of overpayment</li>
-            <li>Execute the negotiation to secure the improvements</li>
-        </ul>
-
-        <div style="background: #f8fafc; padding: 40px; border-radius: 8px; border: 1px solid #e2e8f0; margin: 40px 0;">
-            <h4 style="margin-top: 0; text-transform: uppercase; letter-spacing: 1px; color: var(--profit);">The Performance Guarantee</h4>
-            <p style="font-size: 1.3rem; margin-bottom: 0;"><strong>You pay nothing unless we find measurable savings.</strong> No retainers. No upfront fees. If there is no gain, there is no fee.</p>
+        <div class="process-grid">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h4>The Data Dump</h4>
+                <p style="font-size: 0.9rem;">15 minutes of your time to provide basic statements.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h4>Forensic Audit</h4>
+                <p style="font-size: 0.9rem;">Our team performs the heavy lifting and market benchmarking.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h4>The Recovery Plan</h4>
+                <p style="font-size: 0.9rem;">A 20-minute review of your new found profit.</p>
+            </div>
         </div>
 
-        <p>Initial findings are typically delivered in <strong>2 to 5 days</strong>. You lose nothing by confirming your status, and you stand to recover profit that was already yours.</p>
-
-        <div class="cta-card">
-            <span class="no-risk-tag">ZERO RISK • 100% CONTINGENCY BASED</span>
-            <h2 style="margin-bottom: 30px; font-family: 'Playfair Display', serif; font-size: 2.2rem;">Request Your Banking Profit Audit</h2>
-            <p style="margin-bottom: 40px; opacity: 0.9;">Stop the quiet leak of capital. Secure your audit today.</p>
-            <a href="#" class="btn">Get Started Now</a>
-            <p style="margin-top: 30px; font-size: 0.9rem; opacity: 0.7;">No obligation to proceed. Total clarity guaranteed.</p>
+        <div style="background: #f0fff4; padding: 30px; border-radius: 8px; border: 1px solid var(--profit); margin: 40px 0; text-align: center;">
+            <h2 style="color: var(--profit); margin-top: 0;">The Jay Abraham Risk-Reversal</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 0;"><strong>You pay nothing unless we find measurable savings.</strong> We only want a portion of the <em>found</em> money—money that is currently going to the bank's shareholders instead of yours.</p>
         </div>
 
-        <div style="margin-top: 60px; border-top: 1px solid #eee; padding-top: 40px; font-style: italic; color: #64748b;">
-            <p><strong>A final perspective:</strong> Most growth strategies require more complexity. This one requires less assumption. The decision is simple: Verify or Ignore.</p>
+        <div class="cta-box">
+            <h2 style="font-family: 'Playfair Display'; font-size: 2.2rem; margin-top: 0;">Verify or Ignore?</h2>
+            <p>If your banking is already optimized, you lose nothing by confirming it. If it’s not… you recover profit that was already yours.</p>
+            <a href="#" class="btn">Request Your No-Risk Audit</a>
+            <p style="font-size: 0.8rem; margin-top: 20px; opacity: 0.7;">NO RETAINERS • NO UPFRONT FEES • PERFORMANCE BASED</p>
         </div>
     </div>
 </div>
