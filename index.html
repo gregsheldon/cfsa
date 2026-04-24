@@ -3,422 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Banking Profit Audit | Colibri Financial Services Agents</title>
+  <title>The Banking Profit Audit | Greg Sheldon, Independent Advocate</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #0f172a;
       --primary-soft: #1e293b;
-      --accent: #c5a059; /* More 'Champagne' Gold */
+      --accent: #c5a059;
       --accent-dark: #a6813e;
       --profit: #059669;
-      --loss: #e11d48;
       --bg: #fdfdfd;
       --muted: #475569;
       --line: #e2e8f0;
       --white: #ffffff;
-      --glass: rgba(255, 255, 255, 0.8);
     }
-
-    * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #f1f5f9;
-      background-image: radial-gradient(#cbd5e1 0.5px, transparent 0.5px);
-      background-size: 24px 24px; /* Subtle architectural grid background */
-      color: var(--primary);
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    .top-announcement {
-      background: linear-gradient(90deg, var(--primary) 0%, #1e293b 100%);
-      color: var(--white);
-      text-align: center;
-      padding: 14px;
-      font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      border-bottom: 2px solid var(--accent);
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 60px 20px 100px;
-    }
-
-    .sales-card {
-      background: var(--white);
-      padding: 80px 70px;
-      border-radius: 12px;
-      box-shadow: 0 40px 120px -20px rgba(0, 0, 0, 0.15);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Elegant side accent */
-    .sales-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 8px;
-      height: 100%;
-      background: var(--accent);
-    }
-
-    .eyebrow {
-      color: var(--accent-dark);
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      margin-bottom: 20px;
-      display: inline-block;
-      border-bottom: 1px solid var(--accent);
-      padding-bottom: 4px;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      line-height: 1.15;
-      color: var(--primary);
-      font-weight: 900;
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 6vw, 4.2rem);
-      margin: 0 0 30px;
-      letter-spacing: -2px;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      margin-bottom: 24px;
-    }
-
-    .lead {
-      font-size: 1.35rem;
-      color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 40px;
-      font-weight: 400;
-    }
-
-    .gold-text { color: var(--accent-dark); }
-
-    .hero {
-      text-align: left;
-      padding-bottom: 60px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hero-proof {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin: 30px 0 40px;
-    }
-
-    .proof-pill {
-      background: #f8fafc;
-      border: 1px solid var(--line);
-      border-radius: 4px;
-      padding: 8px 16px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--primary-soft);
-      transition: all 0.3s;
-    }
-
-    .proof-pill:hover {
-      border-color: var(--accent);
-      background: var(--white);
-    }
-
-    .btn {
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-      color: var(--white);
-      padding: 22px 40px;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 1.1rem;
-      border-radius: 4px;
-      display: inline-block;
-      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-      box-shadow: 0 10px 25px rgba(184, 151, 77, 0.3);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 35px rgba(184, 151, 77, 0.4);
-    }
-
-    .btn-secondary {
-      background: var(--primary);
-      box-shadow: none;
-      margin-left: 15px;
-    }
-
-    .btn-secondary:hover { background: #000; }
-
-    .section { padding: 80px 0; border-bottom: 1px solid var(--line); }
-
-    .callout {
-      background: #fdfaf3;
-      border-left: 4px solid var(--accent);
-      padding: 40px;
-      border-radius: 4px;
-      box-shadow: inset 0 0 20px rgba(184, 151, 77, 0.05);
-    }
-
-    .quote {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-style: italic;
-      color: var(--primary);
-    }
-
-    /* Comparison Styling */
-    .comparison-container {
-      background: var(--primary);
-      padding: 40px;
-      border-radius: 12px;
-      margin-top: 40px;
-    }
-
-    .comparison-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0 8px;
-    }
-
-    .comparison-table th {
-      color: var(--accent);
-      text-align: left;
-      padding: 15px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 0.8rem;
-    }
-
-    .comparison-table td {
-      background: rgba(255,255,255,0.05);
-      color: white;
-      padding: 20px;
-      font-size: 1rem;
-    }
-
-    .comparison-table tr td:first-child { border-radius: 8px 0 0 8px; font-weight: 700; color: var(--accent); }
-    .comparison-table tr td:last-child { border-radius: 0 8px 8px 0; }
-
-    .status-standard { color: #fca5a5; }
-    .status-optimized { color: #6ee7b7; font-weight: 800; }
-
-    /* Math Box */
-    .math-box {
-      background: #f8fafc;
-      border: 1px solid var(--line);
-      padding: 50px;
-      border-radius: 12px;
-      text-align: center;
-    }
-
-    .math-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      margin-top: 35px;
-    }
-
-    .math-item {
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      border-top: 4px solid var(--accent);
-    }
-
-    .math-item .number {
-      font-size: 2.2rem;
-      font-family: 'Playfair Display';
-      font-weight: 900;
-      color: var(--primary);
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    /* Process steps */
-    .step {
-      transition: all 0.3s;
-      border: 1px solid transparent;
-    }
-    
-    .step:hover {
-      border-color: var(--accent);
-      background: #fffdf9;
-      transform: translateY(-5px);
-    }
-
-    .guarantee {
-      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-      padding: 50px;
-      border-radius: 12px;
-      border: 1px solid #bdf2d0;
-      text-align: center;
-    }
-
-    .cta-box {
-      background: var(--primary);
-      background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
-      padding: 80px 40px;
-      border-radius: 12px;
-      color: white;
-    }
-
-    .fine-print { font-size: 0.75rem; opacity: 0.6; font-weight: 500; margin-top: 20px;}
-
-    @media (max-width: 900px) {
-      .sales-card { padding: 40px 30px; }
-      .two-col, .math-grid, .process-grid { grid-template-columns: 1fr; }
-      .btn-secondary { margin-left: 0; margin-top: 10px; width: 100%; }
-      .btn { width: 100%; text-align: center; }
-    }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f1f5f9; color: var(--primary); line-height: 1.8; margin: 0; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px 100px; }
+    .sales-card { background: var(--white); padding: 80px 70px; border-radius: 12px; box-shadow: 0 40px 120px -20px rgba(0, 0, 0, 0.15); position: relative; }
+    .sales-card::before { content: ""; position: absolute; top: 0; left: 0; width: 8px; height: 100%; background: var(--accent); }
+    .eyebrow { color: var(--accent-dark); font-weight: 800; letter-spacing: 2px; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 20px; display: inline-block; border-bottom: 1px solid var(--accent); padding-bottom: 4px; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.15; color: var(--primary); font-weight: 900; }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); margin: 0 0 30px; letter-spacing: -1.5px; }
+    h2 { font-size: 2.4rem; margin-bottom: 24px; }
+    .lead { font-size: 1.4rem; color: var(--muted); line-height: 1.6; margin-bottom: 40px; font-style: italic; }
+    .section { padding: 60px 0; border-bottom: 1px solid var(--line); }
+    .callout { background: #fdfaf3; border-left: 4px solid var(--accent); padding: 40px; border-radius: 4px; margin: 20px 0; }
+    .btn { background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%); color: var(--white); padding: 22px 40px; text-decoration: none; font-weight: 800; font-size: 1.1rem; border-radius: 4px; display: inline-block; box-shadow: 0 10px 25px rgba(184, 151, 77, 0.3); text-transform: uppercase; letter-spacing: 1px; transition: transform 0.2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .math-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 35px; }
+    .math-item { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 4px solid var(--accent); text-align: center; }
+    .status-optimized { color: var(--profit); font-weight: 800; }
+    @media (max-width: 768px) { .sales-card { padding: 40px 20px; } .math-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
 
-<div class="top-announcement">Fiducary-Level Advocacy for Business Owners ($2M - $50M Revenue)</div>
+<div style="background: #000; color: #fff; text-align: center; padding: 12px; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">
+    PRIVATE MEMORANDUM: AN ADVISORY ON UNTAPPED PROFIT CENTERS FOR COMPANIES OVER $2M
+</div>
 
 <main class="container">
   <div class="sales-card">
 
-    <section class="hero">
-      <div class="eyebrow">A Private Memorandum for the Chief Executive</div>
-      <h1>There May Be <span class="gold-text">1% to 3% of Your Revenue</span> Hiding Inside Your Bank.</h1>
-      <p class="lead">Most banking arrangements are renewed and paid for year after year without being professionally challenged. We find the profit you've already earned, but haven't kept.</p>
+    <section class="hero" style="border-bottom: 1px solid var(--line); padding-bottom: 60px;">
+      <div class="eyebrow">The Strategy of Preeminence</div>
+      <h1>How Much Profit Is <span style="color:var(--accent-dark)">Quietly Being Confiscated</span> From Your Business... By Your Own Bank?</h1>
+      <p class="lead">"Most business owners are unwittingly subsidizing their bank's bottom line with profit that should be funding their own geometric growth."</p>
       
-      <div class="hero-proof">
-        <div class="proof-pill">✓ 40+ Years Experience</div>
-        <div class="proof-pill">✓ 2-5 Day Turnaround</div>
-        <div class="proof-pill">✓ No Result, No Fee</div>
-      </div>
+      <p>While you tirelessly focus on increasing sales and optimizing operations, there exists a <strong>silent, predatory leak</strong> within your banking structure that most CFOs never even question. It isn't a matter of mismanagement—it is a matter of <strong>misalignment</strong>.</p>
+      
+      <p>If your company generates $2M to $50M in annual revenue, you are likely sitting on a <strong>hidden asset</strong>. By simply renegotiating the "rules of engagement" with your financial institutions, you can recover significant capital—instantly—without selling one more dollar of product.</p>
 
-      <a href="#consultation" class="btn">Request Your Audit</a>
-      <a href="tel:6132725058" class="btn btn-secondary">Call 613-272-5058</a>
+      <div style="margin-top: 40px;">
+        <a href="tel:6138133529" class="btn">Call Greg Sheldon: 613-813-3529</a>
+      </div>
     </section>
 
     <section class="section">
-      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px;" class="two-col">
+      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px;" class="two-col">
         <div>
-          <div class="eyebrow">The Competitive Edge</div>
-          <h2>Your bank is trained to improve its economics. Who is trained to improve yours?</h2>
-          <p>You negotiate every supplier and employee contract. But when it comes to the bank, most owners accept "standard" terms.</p>
-          <p>A quarter point here, a merchant fee there—it adds up to a quiet leak of capital. The Banking Profit Audit stops the leak by making institutions compete for your loyalty.</p>
+          <h2>The Fiduciary Gap</h2>
+          <p>Let’s be candid: Your banker is a professional salesperson. Their mandate is to optimize the bank’s yield. <strong>Who in your organization is professionally mandated to optimize yours?</strong></p>
+          <p>Most owners accept "standard" terms as a cost of doing business. But in the world of high-level commerce, <em>everything</em> is negotiable—if you have the market intelligence and the technical language to challenge the status quo.</p>
+          <p>I act as your <strong>Independent Financial Advocate</strong>. I don't work for the bank. I work for the person who takes the risk: <strong>You.</strong></p>
         </div>
         <div class="callout">
-          <p class="quote">"If you don't know exactly what to ask for, you won't get it."</p>
-          <p style="margin-top:20px; font-weight: 600;">We benchmark your data against current market reality to uncover recoverable profit.</p>
+          <p style="font-family: 'Playfair Display'; font-size: 1.5rem; font-style: italic;">"Profit is not just what you earn; it is everything you stop losing."</p>
+          <p style="font-size: 0.9rem; margin-top: 20px;">I apply over 40 years of banking insight to identify where your bank is over-charging, under-serving, and quietly eroding your net worth.</p>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="comparison-container">
-        <h3 style="color: var(--accent); margin-bottom: 30px;">The Profit Gap: Standard vs. Optimized</h3>
-        <table class="comparison-table">
-          <thead>
-            <tr>
-              <th>Area</th>
-              <th>Standard Relationship</th>
-              <th>Optimized Relationship</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Borrowing</td>
-              <td class="status-standard">Bank-focused pricing</td>
-              <td class="status-optimized">Market-benchmarked</td>
-            </tr>
-            <tr>
-              <td>Processing</td>
-              <td class="status-standard">Bundled / Hidden Fees</td>
-              <td class="status-optimized">Transparent / Interchange+</td>
-            </tr>
-            <tr>
-              <td>Operating</td>
-              <td class="status-standard">Idle Balances</td>
-              <td class="status-optimized">Balance Optimization</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="math-box">
-        <div class="eyebrow">The Math of Found Profit</div>
-        <h2>What does 1-3% look like for you?</h2>
-        <div class="math-grid">
-          <div class="math-item">
-            <span class="number">$2M</span>
-            <strong>$20k – $60k</strong><br>Saved Annually
-          </div>
-          <div class="math-item">
-            <span class="number">$10M</span>
-            <strong>$100k – $300k</strong><br>Saved Annually
-          </div>
-          <div class="math-item">
-            <span class="number">$25M</span>
-            <strong>$250k – $750k</strong><br>Saved Annually
-          </div>
+    <section class="section" style="background: #fdfdfd;">
+      <h2>The Magnitude of the Opportunity</h2>
+      <p>Through our forensic lens, we consistently find that <strong>1% to 3% of total revenue</strong> is being lost to inefficient banking structures. Think about the compounding effect that capital could have on your business if it were reinvested into marketing, R&D, or your own pocket.</p>
+      
+      <div class="math-grid">
+        <div class="math-item">
+            <span style="font-size: 2rem; font-family: 'Playfair Display'; font-weight: 900;">$5M Rev</span>
+            <hr style="border: 0; border-top: 1px solid var(--line); margin: 15px 0;">
+            <strong class="status-optimized">$50k – $150k</strong><br><span style="font-size: 0.8rem;">RECOVERABLE ANNUALLY</span>
+        </div>
+        <div class="math-item">
+            <span style="font-size: 2rem; font-family: 'Playfair Display'; font-weight: 900;">$15M Rev</span>
+            <hr style="border: 0; border-top: 1px solid var(--line); margin: 15px 0;">
+            <strong class="status-optimized">$150k – $450k</strong><br><span style="font-size: 0.8rem;">RECOVERABLE ANNUALLY</span>
+        </div>
+        <div class="math-item">
+            <span style="font-size: 2rem; font-family: 'Playfair Display'; font-weight: 900;">$30M Rev</span>
+            <hr style="border: 0; border-top: 1px solid var(--line); margin: 15px 0;">
+            <strong class="status-optimized">$300k – $900k</strong><br><span style="font-size: 0.8rem;">RECOVERABLE ANNUALLY</span>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="eyebrow">Strategic Process</div>
-      <h2>The 4-Part Forensic Recovery</h2>
-      <div class="process-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 30px;">
-        <div class="step" style="padding: 20px; background: #fdfdfd; border-radius: 8px;">
-          <div style="color: var(--accent); font-weight: 900; font-size: 1.5rem; margin-bottom: 10px;">01</div>
-          <strong style="display: block; margin-bottom: 10px;">Gather</strong>
-          <span style="font-size: 0.85rem; color: var(--muted);">15 minutes to provide basic statements.</span>
-        </div>
-        <div class="step" style="padding: 20px; background: #fdfdfd; border-radius: 8px;">
-          <div style="color: var(--accent); font-weight: 900; font-size: 1.5rem; margin-bottom: 10px;">02</div>
-          <strong style="display: block; margin-bottom: 10px;">Diagnose</strong>
-          <span style="font-size: 0.85rem; color: var(--muted);">We identify hidden markups and leaks.</span>
-        </div>
-        <div class="step" style="padding: 20px; background: #fdfdfd; border-radius: 8px;">
-          <div style="color: var(--accent); font-weight: 900; font-size: 1.5rem; margin-bottom: 10px;">03</div>
-          <strong style="display: block; margin-bottom: 10px;">Benchmark</strong>
-          <span style="font-size: 0.85rem; color: var(--muted);">Compare economics against market reality.</span>
-        </div>
-        <div class="step" style="padding: 20px; background: #fdfdfd; border-radius: 8px;">
-          <div style="color: var(--accent); font-weight: 900; font-size: 1.5rem; margin-bottom: 10px;">04</div>
-          <strong style="display: block; margin-bottom: 10px;">Recover</strong>
-          <span style="font-size: 0.85rem; color: var(--muted);">Execution of better terms and savings.</span>
+    <section class="section" style="border: none; text-align: center;">
+      <div style="background: #ecfdf5; padding: 60px; border-radius: 12px; border: 2px dashed #10b981;">
+        <h2 style="color: var(--profit); margin-top: 0;">The Absolute Risk-Reversal</h2>
+        <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px;">"I am so certain that your current banking arrangement is under-optimized that I am willing to bear the entire cost of the audit myself."</p>
+        <p><strong>If I do not identify measurable, bank-verified savings for your business, you pay nothing.</strong> I don't ask for a retainer. I don't ask for "consulting fees." I only share in a portion of the <u>new found profit</u> I secure for you.</p>
+        
+        <div id="audit" style="margin-top: 40px;">
+          <a href="mailto:info@colibrifsa.com?subject=Banking%20Audit%20Request%20-%20Attn:%20Greg%20Sheldon" class="btn" style="background: var(--primary);">Secure Your Forensic Audit</a>
+          <p style="font-size: 0.8rem; margin-top: 20px; color: var(--muted); font-weight: 700;">Initial Review Completed by Greg Sheldon in 2-5 Days</p>
         </div>
       </div>
     </section>
 
-    <section class="section" style="border: none;">
-      <div class="guarantee">
-        <h2 style="color: var(--profit); margin-top: 0;">No Result. No Fee.</h2>
-        <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px;">If we do not identify measurable savings or meaningful improvement opportunities, <strong>you do not pay a diagnostic fee.</strong> This is our total risk-reversal guarantee.</p>
-        <div class="cta-box" id="consultation">
-          <h2 style="color: white; margin-bottom: 10px;">Stop the Leak Today.</h2>
-          <p style="margin-bottom: 30px;">Initial diagnostics are completed in as little as 2 to 5 days.</p>
-          <a href="mailto:info@colibrifsa.com" class="btn">Email: Request Audit</a>
-          <p class="fine-print">SellingWorx Plus Inc. / David Sheldon, Agent for CFSA • Performance-Based Model</p>
-        </div>
-      </section>
+    <footer style="margin-top: 40px; font-size: 0.8rem; color: var(--muted); text-align: center;">
+      <p><strong>A Final Thought:</strong> In business, you don't get what you deserve—you get what you negotiate. If you are willing to spend 15 minutes to potentially recover six figures in lost profit, let's have a conversation.</p>
+      <p>SellingWorx Plus Inc. • <strong>Greg Sheldon</strong>, Independent Agent • <strong>613-813-3529</strong></p>
+    </footer>
 
   </div>
 </main>
