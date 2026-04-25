@@ -27,9 +27,8 @@
       margin: 0;
     }
 
-    /* Target line spacing strictly for body paragraphs and lists */
     p, li {
-      line-height: 2.1; /* Increased specifically for paragraph text */
+      line-height: 2.1;
       margin-bottom: 1.5rem;
     }
 
@@ -83,12 +82,24 @@
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
       color: var(--primary);
-      line-height: 1.2; /* Kept tight for professional impact */
+      line-height: 1.2;
       margin-top: 0;
     }
 
     h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; margin-bottom: 30px; letter-spacing: -1.5px; }
     h2 { font-size: 2.2rem; margin-bottom: 25px; margin-top: 60px; border-left: 5px solid var(--accent); padding-left: 20px;}
+
+    /* Tighten the spacing for the transition section specifically */
+    .hook-section {
+      padding-top: 40px;
+      padding-bottom: 10px; /* Reduced to bring next section closer */
+    }
+
+    .fiduciary-section {
+      padding-top: 10px; /* Reduced to pull this closer to the hook */
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
 
     .highlight { color: var(--accent); }
     
@@ -108,7 +119,7 @@
         margin: 0;
         color: var(--primary);
         letter-spacing: 0.5px;
-        line-height: 1.4; /* Specific override for the hook box */
+        line-height: 1.4;
     }
 
     .section { padding: 40px 0; border-bottom: 1px solid var(--border); }
@@ -216,18 +227,18 @@
   <div class="memo-card">
     <span class="memo-label">Private Advisory Memorandum</span>
     
-    <header class="section no-border" style="padding-bottom: 0;">
+    <header class="hook-section">
       <div class="hook-box">
         <p>“Your bank knows exactly how much margin they make on you. Do you?”</p>
       </div>
       
       <h1>How Much Profit Is <span class="highlight">Quietly Being Confiscated</span> From Your Business… By Your Own Bank?</h1>
       
-      <p style="font-size: 1.3rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 40px; font-style: italic;">Not stolen. Not mismanaged. Simply… never questioned.</p>
+      <p style="font-size: 1.3rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 20px; font-style: italic;">Not stolen. Not mismanaged. Simply… never questioned.</p>
     </header>
 
-    <section class="section">
-      <h2>Why This Exists (And Why It’s Rare)</h2>
+    <section class="fiduciary-section">
+      <h2 style="margin-top: 0;">Why This Exists (And Why It’s Rare)</h2>
       <p>Most financial service providers are compensated based on what you spend. They are incentivized to maintain the status quo. <strong>I am only compensated based on what you stop spending.</strong></p>
       <p>This is a fundamental shift in preeminence. I do not represent the institution; I act as your fiduciary. While you focus on increasing sales and operations, I focus on the one area no one else is incentivized to fix: <span class="highlight">The silent, structural leak inside your banking structure.</span></p>
     </section>
