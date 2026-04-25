@@ -115,7 +115,6 @@
     }
 
     .fiduciary-section { padding-top: 10px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
-
     .highlight { color: var(--accent); }
     
     .hook-box {
@@ -204,7 +203,7 @@
 
     .btn:hover { background: #000; transform: translateY(-2px); }
 
-    /* --- FORM STYLING --- */
+    /* --- FORMSUBMIT STYLING --- */
     .form-container {
       margin-top: 50px;
       text-align: left;
@@ -263,7 +262,7 @@
       <div class="hook-box">
         <p>“Your bank knows exactly how much margin they make on you. Do you?”</p>
       </div>
-      <h1>How Much Profit Is <span class="highlight">Quietly Being Drained</span> From Your Business… By Your Own Bank?</h1>
+      <h1>How Much Profit Is <span class="highlight">Quietly Being Confiscated</span> From Your Business… By Your Own Bank?</h1>
       <p style="font-size: 1.4rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 20px; font-style: italic; max-width: 800px; margin-left: auto; margin-right: auto;">Not stolen. Not mismanaged. Simply… never questioned.</p>
     </header>
 
@@ -311,14 +310,17 @@
 
       <div class="form-container">
         <h3>Request Your Forensic Audit</h3>
-        <form id="audit-form" action="https://formspree.io/f/mqakvjnd" method="POST">
+        <form id="audit-form" action="https://formsubmit.co/ajax/gregwsheldon@gmail.com" method="POST">
+          <input type="text" name="_honey" style="display:none">
+          <input type="hidden" name="_captcha" value="false">
+          
           <div class="form-group">
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" placeholder="John Doe" required>
           </div>
           <div class="form-group">
             <label for="email">Company Email</label>
-            <input type="email" id="email" name="_replyto" placeholder="john@company.com" required>
+            <input type="email" id="email" name="email" placeholder="john@company.com" required>
           </div>
           <div class="form-group">
             <label for="company">Company Name</label>
@@ -364,12 +366,21 @@
   form.onsubmit = async (e) => {
     e.preventDefault();
     const data = new FormData(form);
+    const object = Object.fromEntries(data.entries());
+    const json = JSON.stringify(object);
     
+    status.innerHTML = "Sending...";
+    status.className = "";
+    status.style.display = "block";
+
     try {
       const response = await fetch(form.action, {
-        method: form.method,
-        body: data,
-        headers: { 'Accept': 'application/json' }
+        method: "POST",
+        headers: { 
+            "Content-Type": "application/json",
+            "Accept": "application/json" 
+        },
+        body: json
       });
       
       if (response.ok) {
