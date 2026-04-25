@@ -49,12 +49,12 @@
     .container {
       max-width: 950px;
       margin: 0 auto;
-      padding: 40px 20px 100px; /* Reduced top padding */
+      padding: 40px 20px 100px;
     }
 
     .memo-card {
       background: var(--white);
-      padding: 60px 70px 80px; /* Reduced top padding */
+      padding: 60px 70px 80px;
       border-radius: 4px;
       box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.1);
       position: relative;
@@ -73,7 +73,7 @@
       letter-spacing: 3px;
       color: var(--accent);
       font-size: 0.85rem;
-      margin-bottom: 30px; /* Reduced spacing */
+      margin-bottom: 30px;
       display: block;
       border-bottom: 1px solid var(--border);
       padding-bottom: 10px;
@@ -92,6 +92,28 @@
     h2 { font-size: 2.2rem; margin-bottom: 25px; margin-top: 60px; border-left: 5px solid var(--accent); padding-left: 20px;}
 
     .hook-section { padding-top: 10px; padding-bottom: 10px; text-align: center; }
+    
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+      margin: 40px 0;
+      border-radius: 8px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     .fiduciary-section { padding-top: 10px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
 
     .highlight { color: var(--accent); }
@@ -100,7 +122,7 @@
         background: var(--accent-light);
         padding: 20px;
         border-radius: 4px;
-        margin-bottom: 30px; /* Reduced gap between box and headline */
+        margin-bottom: 30px;
         text-align: center;
         border: 1px solid #f3dfad;
     }
@@ -232,6 +254,10 @@
       <p style="font-size: 1.4rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 20px; font-style: italic; max-width: 800px; margin-left: auto; margin-right: auto;">Not stolen. Not mismanaged. Simply… never questioned.</p>
     </header>
 
+    <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/OM-_Z8eaxhQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
     <div class="anchor-statement">
         “The easiest profit you will ever make… <br>is the profit you stop losing.”
     </div>
@@ -318,7 +344,7 @@
 
     <footer class="footer-note">
       <p><strong>Greg Sheldon</strong> | Independent Financial Advocate</p>
-      <p>613-813-3529</p>
+      <p>SellingWorx Plus Inc. • 613-813-3529</p>
       <p style="font-size: 0.75rem; opacity: 0.7; margin-top: 20px;">Serving companies with $2M+ in revenue across all industries.</p>
     </footer>
   </div>
