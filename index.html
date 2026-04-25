@@ -24,8 +24,13 @@
       font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: #f1f5f9;
       color: var(--text-main);
-      line-height: 1.9; /* Increased line spacing for readability */
       margin: 0;
+    }
+
+    /* Target line spacing strictly for body paragraphs and lists */
+    p, li {
+      line-height: 2.1; /* Increased specifically for paragraph text */
+      margin-bottom: 1.5rem;
     }
 
     .top-header {
@@ -38,6 +43,7 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       border-bottom: 3px solid var(--accent);
+      line-height: 1.2;
     }
 
     .container {
@@ -71,12 +77,13 @@
       display: block;
       border-bottom: 1px solid var(--border);
       padding-bottom: 10px;
+      line-height: 1;
     }
 
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
       color: var(--primary);
-      line-height: 1.2;
+      line-height: 1.2; /* Kept tight for professional impact */
       margin-top: 0;
     }
 
@@ -96,19 +103,20 @@
 
     .hook-box p {
         font-family: 'Playfair Display', serif;
-        font-size: 1.25rem; /* Adjusted per request */
+        font-size: 1.25rem;
         font-style: italic;
         margin: 0;
         color: var(--primary);
         letter-spacing: 0.5px;
+        line-height: 1.4; /* Specific override for the hook box */
     }
 
     .section { padding: 40px 0; border-bottom: 1px solid var(--border); }
     .no-border { border: none; }
 
     table { width: 100%; border-collapse: collapse; margin: 30px 0; background: #fdfdfd; }
-    th { background: var(--primary); color: white; text-align: left; padding: 15px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
-    td { padding: 18px 15px; border-bottom: 1px solid var(--border); font-weight: 600; }
+    th { background: var(--primary); color: white; text-align: left; padding: 15px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; line-height: 1;}
+    td { padding: 18px 15px; border-bottom: 1px solid var(--border); font-weight: 600; line-height: 1.4;}
     .profit-recovered { color: var(--profit); font-weight: 800; }
 
     .loss-alert {
@@ -127,7 +135,7 @@
     }
 
     .loss-item { text-align: center; background: white; padding: 20px; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-    .loss-item .val { font-size: 1.5rem; font-weight: 900; color: var(--loss); display: block; }
+    .loss-item .val { font-size: 1.5rem; font-weight: 900; color: var(--loss); display: block; line-height: 1;}
 
     .recovery-list {
       display: grid;
@@ -145,6 +153,8 @@
       border-left: 4px solid var(--accent);
       font-weight: 700;
       font-size: 0.95rem;
+      line-height: 1.4;
+      margin-bottom: 0;
     }
 
     .risk-reversal {
@@ -169,6 +179,7 @@
       transition: all 0.3s;
       text-transform: uppercase;
       letter-spacing: 1px;
+      line-height: 1;
     }
 
     .btn:hover { background: #000; transform: translateY(-2px); }
@@ -188,6 +199,7 @@
       color: var(--text-muted);
       border-top: 1px solid var(--border);
       padding-top: 40px;
+      line-height: 1.6;
     }
 
     @media (max-width: 768px) {
@@ -237,7 +249,7 @@
             Every Single Day
         </div>
       </div>
-      <p style="margin-top: 25px; font-weight: 700; text-align: center;">Every day this remains unchallenged, the bank keeps profit that you have already earned.</p>
+      <p style="margin-top: 25px; font-weight: 700; text-align: center; line-height: 1.4;">Every day this remains unchallenged, the bank keeps profit that you have already earned.</p>
     </section>
 
     <section class="section">
@@ -298,20 +310,20 @@
 
     <section class="risk-reversal">
       <h2 style="margin-top: 0; color: var(--profit);">The Absolute Risk Reversal</h2>
-      <p style="font-size: 1.3rem; font-weight: 800; font-family: 'Playfair Display';">“You’ve Already Paid For This.”</p>
+      <p style="font-size: 1.3rem; font-weight: 800; font-family: 'Playfair Display'; line-height: 1.4;">“You’ve Already Paid For This.”</p>
       <p style="max-width: 700px; margin: 0 auto 20px;">This isn’t a new expense. This is recovering money you’ve already earned and already paid away. There is no risk because I bear the entire cost of the diagnostic.</p>
       
       <p><strong>If I don't find savings, you pay $0.</strong> If I do, we only participate in a portion of the <span class="profit-recovered">newly recovered profit.</span></p>
       
       <div class="frictionless">
         <h4 style="margin-top: 0;">Start With This Instead:</h4>
-        <p style="margin-bottom: 0;">If you’re unsure, send <strong>one recent bank statement</strong>. I’ll tell you in 5 minutes if there’s something worth reviewing further. No commitment required.</p>
+        <p style="margin-bottom: 0; line-height: 1.4;">If you’re unsure, send <strong>one recent bank statement</strong>. I’ll tell you in 5 minutes if there’s something worth reviewing further. No commitment required.</p>
       </div>
 
       <div style="margin-top: 30px;">
         <a href="mailto:gregwsheldon@gmail.com?subject=Statement%20Review%20Request" class="btn">Send Statement for 5-Min Review</a>
       </div>
-      <p style="margin-top: 20px; font-weight: 700;">Direct: 613-813-3529</p>
+      <p style="margin-top: 20px; font-weight: 700; line-height: 1;">Direct: 613-813-3529</p>
     </section>
 
     <footer class="footer-note">
