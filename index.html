@@ -89,17 +89,8 @@
     h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; margin-bottom: 30px; letter-spacing: -1.5px; }
     h2 { font-size: 2.2rem; margin-bottom: 25px; margin-top: 60px; border-left: 5px solid var(--accent); padding-left: 20px;}
 
-    /* Tighten the spacing for the transition section specifically */
-    .hook-section {
-      padding-top: 40px;
-      padding-bottom: 10px; /* Reduced to bring next section closer */
-    }
-
-    .fiduciary-section {
-      padding-top: 10px; /* Reduced to pull this closer to the hook */
-      padding-bottom: 40px;
-      border-bottom: 1px solid var(--border);
-    }
+    .hook-section { padding-top: 40px; padding-bottom: 10px; }
+    .fiduciary-section { padding-top: 10px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
 
     .highlight { color: var(--accent); }
     
@@ -120,6 +111,15 @@
         color: var(--primary);
         letter-spacing: 0.5px;
         line-height: 1.4;
+    }
+
+    .anchor-statement {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        text-align: center;
+        color: var(--primary);
+        margin: 40px 0;
+        font-weight: 700;
     }
 
     .section { padding: 40px 0; border-bottom: 1px solid var(--border); }
@@ -175,6 +175,15 @@
       border-radius: 8px;
       text-align: center;
       margin-top: 60px;
+    }
+
+    .binary-decision {
+        background: var(--primary);
+        color: white;
+        padding: 40px;
+        border-radius: 8px;
+        margin-top: 40px;
+        text-align: center;
     }
 
     .btn {
@@ -237,15 +246,36 @@
       <p style="font-size: 1.3rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 20px; font-style: italic;">Not stolen. Not mismanaged. Simply… never questioned.</p>
     </header>
 
+    <div class="anchor-statement">
+        “The easiest profit you will ever make… is the profit you stop losing.”
+    </div>
+
+    <section class="section" style="border-top: 1px solid var(--border);">
+      <h2>What Sophisticated Companies Do Differently</h2>
+      <p>Elite operators don't assume their banking is optimized. They <strong>verify it regularly.</strong> They understand that small percentage improvements at scale equal massive geometric growth in profit.</p>
+      <p>Most companies wait until a problem occurs or cash gets tight to review their banking. By then, they have already overpaid for years. You are either operating at 90% efficiency, or you are 100% optimized. There is no middle ground.</p>
+    </section>
+
     <section class="fiduciary-section">
       <h2 style="margin-top: 0;">Why This Exists (And Why It’s Rare)</h2>
-      <p>Most financial service providers are compensated based on what you spend. They are incentivized to maintain the status quo. <strong>I am only compensated based on what you stop spending.</strong></p>
-      <p>This is a fundamental shift in preeminence. I do not represent the institution; I act as your fiduciary. While you focus on increasing sales and operations, I focus on the one area no one else is incentivized to fix: <span class="highlight">The silent, structural leak inside your banking structure.</span></p>
+      <p>Most financial service providers are compensated based on what you spend. I am only compensated based on what you <strong>stop spending.</strong></p>
+      <p>This is a fundamental shift in preeminence. I do not represent the institution; I act as your fiduciary to recover <strong>hidden profit</strong> that is already yours. While you focus on increasing sales, I focus on the one area no one else is incentivized to fix.</p>
+    </section>
+
+    <section class="section">
+      <h2>If Any of These Sound Familiar…</h2>
+      <ul style="margin-bottom: 30px;">
+        <li>“We’ve been with the same bank for years.”</li>
+        <li>“I assume our rates are competitive.”</li>
+        <li>“I don’t fully understand how our fees are structured.”</li>
+        <li>“We haven’t reviewed our banking structure in over 12 months.”</li>
+      </ul>
+      <p>If these resonate, there is a <strong>very high probability</strong> your structure is under-optimized and leaking capital every day.</p>
     </section>
 
     <section class="loss-alert">
       <h3 style="margin-top: 0; color: var(--loss);">The Cost of Inaction</h3>
-      <p>Delay is not a neutral decision. It is an active expense. A $10M business losing 1–3% annually is quietly giving up profit every single business day.</p>
+      <p>Delay is an active expense. A $10M business losing 1–3% annually is quietly giving up profit that belongs in your business—not the bank's dividends.</p>
       <div class="loss-grid">
         <div class="loss-item">
             <span class="val">$8,000 – $25,000</span>
@@ -264,33 +294,14 @@
     </section>
 
     <section class="section">
-      <h2>Why Most Companies Never Fix This</h2>
-      <p>This isn’t a knowledge problem. It’s a <strong>leverage problem.</strong></p>
-      <ul style="margin-bottom: 30px;">
-        <li><strong>The Relationship Trap:</strong> You trust your banker, so you assume their pricing is fair.</li>
-        <li><strong>Standardization Myth:</strong> Most assume pricing is "standard" across the market. Better terms already exist—they are just never automatically given.</li>
-        <li><strong>Diagnostic Blindness:</strong> Most CFOs don't know the "insider" language required to benchmark against market reality.</li>
-      </ul>
+      <h2>You Stay In Total Control</h2>
+      <p>This is about clarity, not pressure. You are never obligated to switch banks, change providers, or implement anything. You simply see the truth of your current market position and decide what is best for your company. </p>
+      <p><strong>This takes less time than you think:</strong> 15 minutes to send documents, 2–5 days for forensic analysis, and one short call to review findings. Action is trivial; the result is significant.</p>
     </section>
 
     <section class="section">
       <h2>“Most Clients Are Shocked By One Thing”</h2>
-      <p>It’s not just the total amount they are overpaying. It is the <strong>inconsistency.</strong></p>
-      <p>When we perform a forensic review, we often find two companies with identical risk profiles and volume, yet one is paying 40% more for the exact same credit facility or merchant service. <strong>Why?</strong> Because one asked the right questions, and the other didn't.</p>
-    </section>
-
-    <section class="section">
-      <h2>The 8 Primary Profit Recovery Areas</h2>
-      <ul class="recovery-list">
-        <li>Reduce Merchant Service Fees</li>
-        <li>Improve Working Capital Efficiency</li>
-        <li>Reduce Account & Treasury Fees</li>
-        <li>Reduce Interest Paid on Loans</li>
-        <li>Decrease Reporting Requirements</li>
-        <li>Increase Net Profitability</li>
-        <li>Reduce Collateral Requirements</li>
-        <li>Maximize Interest on Idle Funds</li>
-      </ul>
+      <p>It’s not just the amount—it’s the inconsistency. Pricing is not a fixed science in banking; it is a negotiation. Because banking is one of the most competitive industries in the world, better terms <strong>already exist</strong>. They are just not automatically given to those who don't ask.</p>
     </section>
 
     <section class="section">
@@ -299,7 +310,7 @@
         <thead>
           <tr>
             <th>Annual Revenue</th>
-            <th>Recoverable Profit (Range)</th>
+            <th>Recoverable Profit (Already Yours)</th>
           </tr>
         </thead>
         <tbody>
@@ -322,25 +333,31 @@
     <section class="risk-reversal">
       <h2 style="margin-top: 0; color: var(--profit);">The Absolute Risk Reversal</h2>
       <p style="font-size: 1.3rem; font-weight: 800; font-family: 'Playfair Display'; line-height: 1.4;">“You’ve Already Paid For This.”</p>
-      <p style="max-width: 700px; margin: 0 auto 20px;">This isn’t a new expense. This is recovering money you’ve already earned and already paid away. There is no risk because I bear the entire cost of the diagnostic.</p>
+      <p style="max-width: 700px; margin: 0 auto 20px;">This isn’t a new expense. This is recovering money you’ve already earned. Even if you choose to do nothing, you walk away with a <strong>clear benchmark</strong> of your current structure and where you stand in the market.</p>
       
       <p><strong>If I don't find savings, you pay $0.</strong> If I do, we only participate in a portion of the <span class="profit-recovered">newly recovered profit.</span></p>
       
       <div class="frictionless">
         <h4 style="margin-top: 0;">Start With This Instead:</h4>
-        <p style="margin-bottom: 0; line-height: 1.4;">If you’re unsure, send <strong>one recent bank statement</strong>. I’ll tell you in 5 minutes if there’s something worth reviewing further. No commitment required.</p>
+        <p style="margin-bottom: 0; line-height: 1.4;">Not ready to talk yet? Reply to my email with the word <strong>“REVIEW”</strong> and I’ll tell you exactly what I need in under 2 minutes. Or, send one statement for a 5-minute initial check.</p>
       </div>
 
       <div style="margin-top: 30px;">
         <a href="mailto:gregwsheldon@gmail.com?subject=Statement%20Review%20Request" class="btn">Send Statement for 5-Min Review</a>
       </div>
-      <p style="margin-top: 20px; font-weight: 700; line-height: 1;">Direct: 613-813-3529</p>
     </section>
+
+    <div class="binary-decision">
+      <h2 style="color: white; margin-top: 0;">At This Point, There Are Only Two Options</h2>
+      <p style="font-size: 1.1rem; opacity: 0.9;">1. Your banking is already 100% optimized → <strong>You lose nothing by verifying.</strong></p>
+      <p style="font-size: 1.1rem; opacity: 0.9;">2. It isn't → <strong>And you are currently giving away significant profit every day.</strong></p>
+      <p style="font-weight: 700; margin-top: 20px;">There is no third scenario. You don't need to decide if this works—you only need to decide if it's worth 15 minutes to find out.</p>
+    </div>
 
     <footer class="footer-note">
       <p><strong>Greg Sheldon</strong> | Independent Financial Advocate</p>
       <p>SellingWorx Plus Inc. • $2M+ Revenue Optimization</p>
-      <p style="font-size: 0.75rem; opacity: 0.7; margin-top: 20px;">Verification takes 15 minutes. Delaying takes profit. Which is more expensive?</p>
+      <p style="font-size: 0.75rem; opacity: 0.7; margin-top: 20px;">613-813-3529 • Verification takes 15 minutes. Delaying takes profit.</p>
     </footer>
   </div>
 </main>
