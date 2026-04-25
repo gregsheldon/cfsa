@@ -93,15 +93,15 @@
 
     .hook-section { padding-top: 10px; padding-bottom: 10px; text-align: center; }
     
-    /* Adjusted margin-top to bring the video up by 10px */
+    /* Shifted up by 20px (from 30px to 10px margin-top) */
     .video-wrapper {
       position: relative;
       padding-bottom: 56.25%; 
       height: 0;
       overflow: hidden;
       max-width: 100%;
-      background: #000;
-      margin: 30px 0 40px 0; 
+      background: var(--white); /* Changed to white to smooth initial load */
+      margin: 10px 0 40px 0; 
       border-radius: 8px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.1);
     }
@@ -256,7 +256,7 @@
     </header>
 
     <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/L7QupSZOhlc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/L7QupSZOhlc?rel=0&modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <div class="anchor-statement">
