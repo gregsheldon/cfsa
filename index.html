@@ -77,7 +77,7 @@
       border-bottom: 1px solid var(--border);
       padding-bottom: 10px;
       line-height: 1;
-      text-align: center; /* Center aligned as requested */
+      text-align: center;
     }
 
     h1, h2, h3 {
@@ -90,7 +90,7 @@
     h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; margin-bottom: 30px; letter-spacing: -1.5px; }
     h2 { font-size: 2.2rem; margin-bottom: 25px; margin-top: 60px; border-left: 5px solid var(--accent); padding-left: 20px;}
 
-    .hook-section { padding-top: 40px; padding-bottom: 10px; }
+    .hook-section { padding-top: 40px; padding-bottom: 10px; text-align: center; }
     .fiduciary-section { padding-top: 10px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
 
     .highlight { color: var(--accent); }
@@ -121,10 +121,22 @@
         color: var(--primary);
         margin: 40px 0;
         font-weight: 700;
+        line-height: 1.4;
     }
 
     .section { padding: 40px 0; border-bottom: 1px solid var(--border); }
-    .no-border { border: none; }
+    
+    .roi-badge {
+        background: var(--primary);
+        color: var(--accent);
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-weight: 800;
+        margin-top: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
 
     table { width: 100%; border-collapse: collapse; margin: 30px 0; background: #fdfdfd; }
     th { background: var(--primary); color: white; text-align: left; padding: 15px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; line-height: 1;}
@@ -148,26 +160,6 @@
 
     .loss-item { text-align: center; background: white; padding: 20px; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
     .loss-item .val { font-size: 1.5rem; font-weight: 900; color: var(--loss); display: block; line-height: 1;}
-
-    .recovery-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      list-style: none;
-      padding: 0;
-      margin-top: 30px;
-    }
-
-    .recovery-list li {
-      background: var(--accent-light);
-      padding: 15px;
-      border-radius: 4px;
-      border-left: 4px solid var(--accent);
-      font-weight: 700;
-      font-size: 0.95rem;
-      line-height: 1.4;
-      margin-bottom: 0;
-    }
 
     .risk-reversal {
       background: #ecfdf5;
@@ -205,14 +197,6 @@
 
     .btn:hover { background: #000; transform: translateY(-2px); }
 
-    .frictionless {
-        background: #f8fafc;
-        border: 1px solid var(--border);
-        padding: 30px;
-        border-radius: 8px;
-        margin-top: 30px;
-    }
-
     .footer-note {
       margin-top: 60px;
       text-align: center;
@@ -225,37 +209,31 @@
 
     @media (max-width: 768px) {
       .memo-card { padding: 40px 20px; }
-      .loss-grid, .recovery-list { grid-template-columns: 1fr; }
+      .loss-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-<div class="top-header">FOR THE EXCLUSIVE ATTENTION OF THE CEO/OWNER • ASSET RECOVERY MEMO</div>
+<div class="top-header">Bank Smarter. Keep More. Guaranteed.</div>
 
 <main class="container">
   <div class="memo-card">
     <span class="memo-label">Private Advisory Memorandum</span>
     
-    <header class="hook-section" style="text-align: center;">
+    <header class="hook-section">
       <div class="hook-box">
         <p>“Your bank knows exactly how much margin they make on you. Do you?”</p>
       </div>
       
-      <h1 style="margin-left: auto; margin-right: auto;">How Much Profit Is <span class="highlight">Quietly Being Confiscated</span> From Your Business… By Your Own Bank?</h1>
+      <h1>How Much Profit Is <span class="highlight">Quietly Being Confiscated</span> From Your Business… By Your Own Bank?</h1>
       
-      <p style="font-size: 1.3rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 20px; font-style: italic; margin-left: auto; margin-right: auto; max-width: 800px;">Not stolen. Not mismanaged. Simply… never questioned.</p>
+      <p style="font-size: 1.3rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 20px; font-style: italic; max-width: 800px; margin-left: auto; margin-right: auto;">Not stolen. Not mismanaged. Simply… never questioned.</p>
     </header>
 
     <div class="anchor-statement">
-        “The easiest profit you will ever make… is the profit you stop losing.”
+        “The easiest profit you will ever make… <br>is the profit you stop losing.”
     </div>
-
-    <section class="section" style="border-top: 1px solid var(--border);">
-      <h2>What Sophisticated Companies Do Differently</h2>
-      <p>Elite operators don't assume their banking is optimized. They <strong>verify it regularly.</strong> They understand that small percentage improvements at scale equal massive geometric growth in profit.</p>
-      <p>Most companies wait until a problem occurs or cash gets tight to review their banking. By then, they have already overpaid for years. You are either operating at 90% efficiency, or you are 100% optimized. There is no middle ground.</p>
-    </section>
 
     <section class="fiduciary-section">
       <h2 style="margin-top: 0;">Why This Exists (And Why It’s Rare)</h2>
@@ -264,14 +242,31 @@
     </section>
 
     <section class="section">
-      <h2>If Any of These Sound Familiar…</h2>
-      <ul style="margin-bottom: 30px;">
-        <li>“We’ve been with the same bank for years.”</li>
-        <li>“I assume our rates are competitive.”</li>
-        <li>“I don’t fully understand how our fees are structured.”</li>
-        <li>“We haven’t reviewed our banking structure in over 12 months.”</li>
-      </ul>
-      <p>If these resonate, there is a <strong>very high probability</strong> your structure is under-optimized and leaking capital every day.</p>
+      <h2>Real Recovery Potential</h2>
+      <p>Our clients are currently averaging over <strong>600% 3-year ROI</strong> on our projects. This isn't just about a one-time saving; it's about a permanent shift in your company's financial efficiency.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Annual Revenue</th>
+            <th>Recoverable Profit (Already Yours)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>$5M Revenue</td>
+            <td class="profit-recovered">$50,000 – $150,000</td>
+          </tr>
+          <tr>
+            <td>$10M Revenue</td>
+            <td class="profit-recovered">$100,000 – $300,000</td>
+          </tr>
+          <tr>
+            <td>$25M Revenue</td>
+            <td class="profit-recovered">$250,000 – $750,000</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="roi-badge">Historical Client Average: 600% 3-Year ROI</div>
     </section>
 
     <section class="loss-alert">
@@ -295,54 +290,19 @@
     </section>
 
     <section class="section">
-      <h2>You Stay In Total Control</h2>
-      <p>This is about clarity, not pressure. You are never obligated to switch banks, change providers, or implement anything. You simply see the truth of your current market position and decide what is best for your company. </p>
-      <p><strong>This takes less time than you think:</strong> 15 minutes to send documents, 2–5 days for forensic analysis, and one short call to review findings. Action is trivial; the result is significant.</p>
-    </section>
-
-    <section class="section">
-      <h2>“Most Clients Are Shocked By One Thing”</h2>
-      <p>It’s not just the amount—it’s the inconsistency. Pricing is not a fixed science in banking; it is a negotiation. Because banking is one of the most competitive industries in the world, better terms <strong>already exist</strong>. They are just not automatically given to those who don't ask.</p>
-    </section>
-
-    <section class="section">
-      <h2>Real Recovery Potential</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Annual Revenue</th>
-            <th>Recoverable Profit (Already Yours)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>$5M Revenue</td>
-            <td class="profit-recovered">$50,000 – $150,000</td>
-          </tr>
-          <tr>
-            <td>$10M Revenue</td>
-            <td class="profit-recovered">$100,000 – $300,000</td>
-          </tr>
-          <tr>
-            <td>$25M Revenue</td>
-            <td class="profit-recovered">$250,000 – $750,000</td>
-          </tr>
-        </tbody>
-      </table>
+      <h2>Beyond Savings: Securing Your Growth</h2>
+      <p>We don't just stop the leaks; we help you fill the tank. While our forensic audit recovers lost profit, we also specialize in securing <strong>$500k to $5M in new funding</strong> for various growth and expansion needs.</p>
+      <p>We identify your specific needs, prepare professional financing proposals, and negotiate terms with interested parties to ensure you have the optimal financial structure required to move at the speed of the market.</p>
+      <p style="font-weight: 700; color: var(--primary);">Your Hidden Banking Profits—Found Fast.</p>
     </section>
 
     <section class="risk-reversal">
-      <h2 style="margin-top: 0; color: var(--profit);">The Absolute Risk Reversal</h2>
+      <h2 style="margin-top: 0; color: var(--profit);">No Savings, No Fee. Just Results.</h2>
       <p style="font-size: 1.3rem; font-weight: 800; font-family: 'Playfair Display'; line-height: 1.4;">“You’ve Already Paid For This.”</p>
-      <p style="max-width: 700px; margin: 0 auto 20px;">This isn’t a new expense. This is recovering money you’ve already earned. Even if you choose to do nothing, you walk away with a <strong>clear benchmark</strong> of your current structure and where you stand in the market.</p>
+      <p style="max-width: 700px; margin: 0 auto 20px;">This isn’t a new expense. This is recovering money you’ve already earned and already paid away. There is no risk because I bear the entire cost of the diagnostic.</p>
       
       <p><strong>If I don't find savings, you pay $0.</strong> If I do, we only participate in a portion of the <span class="profit-recovered">newly recovered profit.</span></p>
       
-      <div class="frictionless">
-        <h4 style="margin-top: 0;">Start With This Instead:</h4>
-        <p style="margin-bottom: 0; line-height: 1.4;">Not ready to talk yet? Reply to my email with the word <strong>“REVIEW”</strong> and I’ll tell you exactly what I need in under 2 minutes. Or, send one statement for a 5-minute initial check.</p>
-      </div>
-
       <div style="margin-top: 30px;">
         <a href="mailto:gregwsheldon@gmail.com?subject=Statement%20Review%20Request" class="btn">Send Statement for 5-Min Review</a>
       </div>
@@ -352,13 +312,12 @@
       <h2 style="color: white; margin-top: 0;">At This Point, There Are Only Two Options</h2>
       <p style="font-size: 1.1rem; opacity: 0.9;">1. Your banking is already 100% optimized → <strong>You lose nothing by verifying.</strong></p>
       <p style="font-size: 1.1rem; opacity: 0.9;">2. It isn't → <strong>And you are currently giving away significant profit every day.</strong></p>
-      <p style="font-weight: 700; margin-top: 20px;">There is no third scenario. You don't need to decide if this works—you only need to decide if it's worth 15 minutes to find out.</p>
+      <p style="font-weight: 700; margin-top: 20px;">There is no third scenario. Verification takes 15 minutes. Delaying takes profit.</p>
     </div>
 
     <footer class="footer-note">
       <p><strong>Greg Sheldon</strong> | Independent Financial Advocate</p>
-      <p>SellingWorx Plus Inc. • $2M+ Revenue Optimization</p>
-      <p style="font-size: 0.75rem; opacity: 0.7; margin-top: 20px;">613-813-3529 • Verification takes 15 minutes. Delaying takes profit.</p>
+      <p style="font-size: 0.75rem; opacity: 0.7; margin-top: 20px;">Serving companies with $2M+ in revenue across all industries.</p>
     </footer>
   </div>
 </main>
