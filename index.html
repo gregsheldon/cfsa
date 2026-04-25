@@ -28,6 +28,7 @@
     }
 
     p, li {
+      font-size: 1.15rem; 
       line-height: 2.1;
       margin-bottom: 1.5rem;
     }
@@ -48,12 +49,12 @@
     .container {
       max-width: 950px;
       margin: 0 auto;
-      padding: 60px 20px 100px;
+      padding: 40px 20px 100px; /* Reduced top padding */
     }
 
     .memo-card {
       background: var(--white);
-      padding: 80px 70px;
+      padding: 60px 70px 80px; /* Reduced top padding */
       border-radius: 4px;
       box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.1);
       position: relative;
@@ -72,7 +73,7 @@
       letter-spacing: 3px;
       color: var(--accent);
       font-size: 0.85rem;
-      margin-bottom: 40px;
+      margin-bottom: 30px; /* Reduced spacing */
       display: block;
       border-bottom: 1px solid var(--border);
       padding-bottom: 10px;
@@ -90,16 +91,16 @@
     h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; margin-bottom: 30px; letter-spacing: -1.5px; }
     h2 { font-size: 2.2rem; margin-bottom: 25px; margin-top: 60px; border-left: 5px solid var(--accent); padding-left: 20px;}
 
-    .hook-section { padding-top: 40px; padding-bottom: 10px; text-align: center; }
+    .hook-section { padding-top: 10px; padding-bottom: 10px; text-align: center; }
     .fiduciary-section { padding-top: 10px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
 
     .highlight { color: var(--accent); }
     
     .hook-box {
         background: var(--accent-light);
-        padding: 25px;
+        padding: 20px;
         border-radius: 4px;
-        margin-bottom: 40px;
+        margin-bottom: 30px; /* Reduced gap between box and headline */
         text-align: center;
         border: 1px solid #f3dfad;
     }
@@ -140,7 +141,7 @@
 
     table { width: 100%; border-collapse: collapse; margin: 30px 0; background: #fdfdfd; }
     th { background: var(--primary); color: white; text-align: left; padding: 15px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; line-height: 1;}
-    td { padding: 18px 15px; border-bottom: 1px solid var(--border); font-weight: 600; line-height: 1.4;}
+    td { padding: 18px 15px; border-bottom: 1px solid var(--border); font-weight: 600; line-height: 1.4; font-size: 1.1rem;}
     .profit-recovered { color: var(--profit); font-weight: 800; }
 
     .loss-alert {
@@ -200,7 +201,7 @@
     .footer-note {
       margin-top: 60px;
       text-align: center;
-      font-size: 0.85rem;
+      font-size: 0.95rem;
       color: var(--text-muted);
       border-top: 1px solid var(--border);
       padding-top: 40px;
@@ -228,7 +229,7 @@
       
       <h1>How Much Profit Is <span class="highlight">Quietly Being Confiscated</span> From Your Business… By Your Own Bank?</h1>
       
-      <p style="font-size: 1.3rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 20px; font-style: italic; max-width: 800px; margin-left: auto; margin-right: auto;">Not stolen. Not mismanaged. Simply… never questioned.</p>
+      <p style="font-size: 1.4rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 20px; font-style: italic; max-width: 800px; margin-left: auto; margin-right: auto;">Not stolen. Not mismanaged. Simply… never questioned.</p>
     </header>
 
     <div class="anchor-statement">
@@ -317,6 +318,7 @@
 
     <footer class="footer-note">
       <p><strong>Greg Sheldon</strong> | Independent Financial Advocate</p>
+      <p>SellingWorx Plus Inc. • 613-813-3529</p>
       <p style="font-size: 0.75rem; opacity: 0.7; margin-top: 20px;">Serving companies with $2M+ in revenue across all industries.</p>
     </footer>
   </div>
