@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Private Advisory | Banking Profit Recovery System</title>
-  <meta name="description" content="Secure massive economic benefits for your $2M+ business. Beyond savings: improved revenue, efficiency, and capital access.">
+  <meta name="description" content="Recover 1% to 3% of your annual revenue from your bank. Forensic banking audits for businesses over $2M.">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://gregsheldon.github.io/cfsa/">
@@ -93,20 +93,6 @@
 
     .section { padding: 40px 0; border-bottom: 1px solid var(--border); }
 
-    .benefit-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin: 30px 0;
-    }
-    .benefit-item {
-      background: var(--accent-light);
-      padding: 25px;
-      border-radius: 4px;
-      border: 1px solid #f3dfad;
-    }
-    .benefit-item strong { color: var(--primary); display: block; margin-bottom: 10px; font-size: 1.2rem; }
-
     table { width: 100%; border-collapse: collapse; margin: 30px 0; background: #fdfdfd; }
     th { background: var(--primary); color: white; text-align: left; padding: 15px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;}
     td { padding: 18px 15px; border-bottom: 1px solid var(--border); font-weight: 600; line-height: 1.4;}
@@ -129,6 +115,7 @@
       width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 4px; font-family: inherit;
     }
 
+    /* --- EXIT POPUP STYLES --- */
     #exit-popup {
       display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       background: rgba(15, 23, 42, 0.9); z-index: 9999; justify-content: center; align-items: center;
@@ -141,6 +128,8 @@
       position: absolute; top: 15px; right: 20px; font-size: 1.5rem; cursor: pointer;
       color: var(--text-muted); font-weight: bold;
     }
+    .popup-content h3 { font-size: 2rem; margin-bottom: 15px; }
+    .popup-content p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; }
 
     #form-status { display: none; margin-top: 20px; padding: 15px; border-radius: 4px; text-align: center; font-weight: 700; }
     #form-status.success { display: block; background: #ecfdf5; color: var(--profit); }
@@ -148,10 +137,7 @@
 
     .footer-note { margin-top: 60px; text-align: center; font-size: 0.95rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 40px; }
 
-    @media (max-width: 768px) { 
-      .memo-card { padding: 40px 20px; } 
-      .benefit-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 768px) { .memo-card { padding: 40px 20px; } }
   </style>
 </head>
 <body>
@@ -164,7 +150,7 @@
     
     <header class="hook-section">
       <h1>How Much Profit Is <span class="highlight">Quietly Being Drained</span> From Your Business… By Your Own Bank?</h1>
-      <p style="font-size: 1.4rem; font-style: italic; color: var(--text-muted);">Banks generate over <strong>$125,000 in profit every minute.</strong> Much of that is capitalized from businesses that simply haven't questioned the status quo.</p>
+      <p style="font-size: 1.4rem; font-style: italic; color: var(--text-muted);">Not stolen. Not mismanaged. Simply… never questioned.</p>
     </header>
 
     <div class="video-wrapper">
@@ -174,40 +160,15 @@
     <div class="anchor-statement">“The easiest profit you will ever make… is the profit you stop losing.”</div>
 
     <section class="section">
-      <h2>Beyond Savings: Total Economic Benefit</h2>
-      <p>Our Banking Profit Recovery System™ doesn't just cut costs; it optimizes your entire financial architecture for growth. We look for four specific pillars of benefit:</p>
-      
-      <div class="benefit-grid">
-        <div class="benefit-item">
-          <strong>Direct Savings</strong>
-          Forensic recovery of legacy fees and overcharges that belong on your balance sheet.
-        </div>
-        <div class="benefit-item">
-          <strong>Increased Revenue</strong>
-          Optimizing transaction flows and processing to capture more margin on every dollar.
-        </div>
-        <div class="benefit-item">
-          <strong>Processing Efficiencies</strong>
-          Streamlining banking operations to reduce labor costs and administrative friction.
-        </div>
-        <div class="benefit-item">
-          <strong>Access to Capital</strong>
-          Improving your profile to unlock the growth capital required to scale your business.
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
       <h2>Real Recovery Potential</h2>
       <table>
-        <thead><tr><th>Annual Revenue</th><th>Target Economic Benefit</th></tr></thead>
+        <thead><tr><th>Annual Revenue</th><th>Recoverable Profit</th></tr></thead>
         <tbody>
           <tr><td>$5M Revenue</td><td class="profit-recovered">$50,000 – $150,000</td></tr>
           <tr><td>$10M Revenue</td><td class="profit-recovered">$100,000 – $300,000</td></tr>
           <tr><td>$25M Revenue</td><td class="profit-recovered">$250,000 – $750,000</td></tr>
         </tbody>
       </table>
-      <p style="font-size: 1rem; color: var(--text-muted); text-align: center;">Our process is thorough. Once your data is received, our team requires one full business day to run our forensic benchmarks and calculate your total potential benefits.</p>
     </section>
 
     <section class="form-container">
@@ -234,8 +195,8 @@
   <div class="popup-content">
     <span class="close-popup" id="close-popup">&times;</span>
     <h3 style="font-family: 'Playfair Display', serif;">Wait! Before You Go...</h3>
-    <p>Every day your banking isn't optimized, your business is losing capital. Claim a full <strong>24-Hour Forensic Review</strong> to see your true economic potential.</p>
-    <a href="#audit-form" class="btn" id="popup-cta">Claim My Review</a>
+    <p>Every day your banking isn't optimized, your business is losing capital. Get a <strong>Free 5-Minute Statement Review</strong> to see exactly what's recoverable.</p>
+    <a href="#audit-form" class="btn" id="popup-cta">Claim My Free Review</a>
   </div>
 </div>
 
@@ -271,6 +232,7 @@
   const closeBtn = document.getElementById("close-popup");
   const ctaBtn = document.getElementById("popup-cta");
 
+  // Show popup when mouse leaves window
   document.addEventListener("mouseleave", (e) => {
     if (e.clientY < 0 && !sessionStorage.getItem('popupShown')) {
       popup.style.display = "flex";
