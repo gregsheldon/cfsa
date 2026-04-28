@@ -66,7 +66,7 @@
 
     .memo-card {
       background: var(--white);
-      padding: 60px 70px 80px;
+      padding: 80px 80px; /* Unified internal margins */
       border-radius: 4px;
       box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.1);
       position: relative;
@@ -85,10 +85,10 @@
       letter-spacing: 3px;
       color: var(--accent);
       font-size: 0.85rem;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       display: block;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 10px;
+      padding-bottom: 15px;
       line-height: 1;
       text-align: center;
     }
@@ -112,7 +112,7 @@
       overflow: hidden;
       max-width: 100%;
       background: var(--white);
-      margin: 10px 0 30px 0; 
+      margin: 10px 0 40px 0; 
       border-radius: 8px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.1);
     }
@@ -126,7 +126,9 @@
       border: 0;
     }
 
-    .fiduciary-section { padding-top: 10px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+    .section { padding: 60px 0; border-bottom: 1px solid var(--border); }
+    .fiduciary-section { padding: 60px 0; border-bottom: 1px solid var(--border); }
+    
     .highlight { color: var(--accent); }
     
     .hook-box {
@@ -153,7 +155,7 @@
         font-size: 1.8rem;
         text-align: center;
         color: var(--primary);
-        margin: 30px 0 50px 0;
+        margin: 40px 0 60px 0;
         font-weight: 700;
         line-height: 1.4;
     }
@@ -161,7 +163,7 @@
     .benefit-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      gap: 25px;
       margin: 40px 0;
     }
 
@@ -187,19 +189,17 @@
       margin-bottom: 0;
     }
 
-    .section { padding: 40px 0; border-bottom: 1px solid var(--border); }
-    
     .case-study-box {
         background: var(--primary);
         color: var(--white);
-        padding: 40px;
+        padding: 50px;
         border-radius: 4px;
         margin: 40px 0;
         text-align: center;
         border-top: 5px solid var(--accent);
     }
 
-    .case-study-box h3 { color: var(--accent); margin-bottom: 20px; }
+    .case-study-box h3 { color: var(--accent); margin-bottom: 25px; }
     
     .mun-results {
         font-family: 'Playfair Display', serif;
@@ -318,7 +318,10 @@
         <p>“Your bank knows exactly how much margin they make on you. Do you?”</p>
       </div>
       <h1>How Much Profit Is <span class="highlight">Quietly Being Drained</span> From Your Business… By Your Own Bank?</h1>
-      <p style="font-size: 1.4rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 20px; font-style: italic; max-width: 800px; margin-left: auto; margin-right: auto;">Bank profits now exceed <strong>$125,000 per minute.</strong> Much of that is capitalized from businesses like yours that simply never questioned the status quo.</p>
+      <p style="font-size: 1.25rem; font-weight: 600; color: var(--primary); max-width: 850px; margin: 0 auto 25px; line-height: 1.5;">
+        Stop subsidizing their $125,000-per-minute machine with the capital your company needs to innovate, hire, and scale.
+      </p>
+      <p style="font-size: 1.15rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 20px; font-style: italic; max-width: 800px; margin-left: auto; margin-right: auto;">Bank profits now exceed $125,000 per minute. Much of that is capitalized from businesses like yours that simply never questioned the status quo.</p>
     </header>
 
     <div class="video-wrapper">
@@ -329,19 +332,17 @@
         “The easiest profit you will ever make… <br>is the profit you stop losing.”
     </div>
 
-    <section class="section" style="background: var(--white); padding: 50px 30px; border-bottom: 1px solid var(--border);">
+    <section class="section">
       <h2 style="margin-top: 0; color: var(--loss); border-left: 5px solid var(--loss); padding-left: 20px; margin-bottom: 30px;">The Invisible Stranglehold: Proof You're Subsidizing Their Historic Gains</h2>
       
-      <div style="max-width: 800px; margin: 0 auto;">
-          <p>This isn't a theory. It's the documented reality of the modern banking industrial complex. Look at the data. <strong>Their strategy is successful—for them.</strong> In 2025, the Big 5 Canadian Banks collectively realized an eye-watering PROFIT of $128,758 every single minute, from company’s just like yours. This unprecedented profit flow is generated through a sophisticated, opaque system of hidden fees, credit spreads, and pricing structures that act as an invisible tax on your ambition.</p>
-          
-          <div style="border: 1px solid var(--border); border-radius: 4px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin: 40px 0;">
-            <img src="https://gregsheldon.github.io/cfsa/bank_profits-every-minute.png" alt="Graph showing bank profits exceeding $128,758 every minute by 2025" style="width: 100%; display: block;">
-            <div style="background: var(--accent-light); padding: 15px; font-size: 0.9rem; font-style: italic; color: var(--text-muted); border-top: 1px solid var(--border); text-align: center;">Figure: 2018–2025 Bank Profit Escalation. Note the exponential trajectory. Much of this growth is capitalized directly from businesses without forensic oversight.</div>
-          </div>
-
-          <p><strong>Here’s the truth:</strong> They are institutional managers incentivized to maximize shareholder value. And every dollar they extract through transactional complexity is a dollar that *cannot* fuel your strategic growth or expand your hiring. Your loyalty isn't being rewarded; it's being capitalized. You are financing their dominance at the direct expense of your own economic independence. The only preeminent question is... are you willing to continue subsidizing their shareholders, or will you recover what’s rightfully yours?</p>
+      <p>This isn't a theory. It's the documented reality of the modern banking industrial complex. Look at the data. <strong>Their strategy is preeminently successful—for them.</strong> In 2025, the Big 5 Canadian Banks collectively realized an eye-watering PROFIT of $128,758 every single minute, from company’s just like yours. This unprecedented profit flow is generated through a sophisticated, opaque system of hidden fees, credit spreads, and pricing structures that act as an invisible tax on your ambition.</p>
+      
+      <div style="border: 1px solid var(--border); border-radius: 4px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin: 40px 0;">
+        <img src="https://gregsheldon.github.io/cfsa/bank_profits-every-minute.png" alt="Graph showing bank profits exceeding $128,758 every minute by 2025" style="width: 100%; display: block;">
+        <div style="background: var(--accent-light); padding: 15px; font-size: 0.9rem; font-style: italic; color: var(--text-muted); border-top: 1px solid var(--border); text-align: center;">Figure: 2018–2025 Bank Profit Escalation. Note the exponential trajectory. Much of this growth is capitalized directly from businesses without forensic oversight.</div>
       </div>
+
+      <p><strong>Here’s the preeminent truth:</strong> They are institutional managers incentivized to maximize shareholder value. And every dollar they extract through transactional complexity is a dollar that *cannot* fuel your strategic growth or expand your hiring. Your loyalty isn't being rewarded; it's being capitalized. You are financing their dominance at the direct expense of your own economic independence. The only preeminent question is... are you willing to continue subsidizing their shareholders, or will you recover what’s rightfully yours?</p>
     </section>
 
     <section class="fiduciary-section">
@@ -375,7 +376,7 @@
     </section>
 
     <section class="section">
-      <h2>Real Recovery Potential</h2>
+      <h2 style="margin-top: 0;">Real Recovery Potential</h2>
       <p>Our clients are currently averaging over <strong>600% 3-year ROI</strong> on our projects. This isn't just about a one-time check; it's about a permanent shift in your company's financial efficiency.</p>
       <table>
         <thead>
@@ -409,9 +410,8 @@
               <span style="font-size: 0.9rem; opacity: 0.8; font-family: 'Plus Jakarta Sans';">(Assumes a 4% return on accumulated savings)</span>
           </div>
           
-          <p style="font-size: 0.95rem; opacity: 0.9;">These figures are not projections built on assumptions about risk or market conditions. They reflect what we typically find when we look closely at banking fees, credit structures, payment systems, and working capital — areas that rarely receive independent scrutiny.</p>
+          <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 0;">These figures are not projections built on assumptions about risk or market conditions. They reflect what we typically find when we look closely at banking fees, credit structures, payment systems, and working capital — areas that rarely receive independent scrutiny.</p>
       </div>
-
     </section>
 
     <section class="risk-reversal">
@@ -460,10 +460,10 @@
       </div>
     </section>
 
-    <div class="binary-decision">
+    <div class="binary-decision" style="margin-bottom: 20px;">
       <h2 style="color: white; margin-top: 0;">Our Verification Standards</h2>
       <p style="font-size: 1.1rem; opacity: 0.9;">We utilize a proprietary internal benchmark to identify potential leaks quickly. However, to provide a definitive audit of your overall benefits, our team requires <strong>one business day</strong> once your documentation is received.</p>
-      <p style="font-weight: 700; margin-top: 20px;">Thoroughness over speed. Precision over guesswork.</p>
+      <p style="font-weight: 700; margin-top: 20px; margin-bottom: 0;">Thoroughness over speed. Precision over guesswork.</p>
     </div>
 
     <footer class="footer-note">
