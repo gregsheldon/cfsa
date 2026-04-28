@@ -213,7 +213,7 @@
       padding: 50px;
       border-radius: 8px;
       text-align: center;
-      margin-top: 60px;
+      margin: 60px 0;
     }
 
     .btn {
@@ -256,16 +256,19 @@
       width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 4px; font-family: inherit; font-size: 1rem;
     }
 
-    /* Fixed alignment for the Verification Standards bar */
-    .binary-decision {
-      margin: 40px 0;
-      text-align: left;
-    }
-
     .verification-quote {
       border-left: 5px solid var(--accent);
       padding-left: 25px;
-      margin-left: 0;
+      margin: 60px 0;
+    }
+
+    .binary-decision-block {
+      background: var(--primary);
+      color: white;
+      padding: 50px;
+      border-radius: 4px;
+      margin: 60px 0;
+      text-align: center;
     }
 
     #form-status {
@@ -340,7 +343,7 @@
       </div>
     </section>
 
-    <section class="section" style="padding: 60px 0; border-bottom: 1px solid var(--border);">
+    <section class="section">
       <h2 style="margin-top: 0;">Why This Exists (And Why It’s Rare)</h2>
       <p>Most financial service providers are compensated based on what you spend. I am only compensated based on what you <strong>stop spending.</strong></p>
       <p>This is a fundamental shift in preeminence. I do not represent the institution; I act as your fiduciary to recover <strong>hidden profit</strong> that is already yours. While you focus on increasing sales, I focus on the one area no one else is incentivized to fix.</p>
@@ -455,12 +458,17 @@
       </div>
     </section>
 
-    <div class="binary-decision">
-      <div class="verification-quote">
-        <h2 style="color: var(--primary); margin-top: 0; border-left: none; padding-left: 0;">Our Verification Standards</h2>
-        <p style="font-size: 1.1rem; opacity: 0.9;">We utilize a proprietary internal benchmark to identify potential leaks quickly. However, to provide a definitive audit of your overall benefits, our team requires <strong>one business day</strong> once your documentation is received.</p>
-        <p style="font-weight: 700; margin-top: 20px; margin-bottom: 0;">Thoroughness over speed. Precision over guesswork.</p>
-      </div>
+    <div class="binary-decision-block">
+      <h2 style="color: white; margin-top: 0;">At This Point, There Are Only Two Options</h2>
+      <p style="font-size: 1.15rem; opacity: 0.9; margin-bottom: 1.5rem;">1. Your banking is already 100% optimized → <strong>You lose nothing by verifying.</strong></p>
+      <p style="font-size: 1.15rem; opacity: 0.9; margin-bottom: 1.5rem;">2. It isn't → <strong>And you are currently giving away significant profit every day.</strong></p>
+      <p style="font-weight: 700; font-size: 1.25rem; margin-top: 30px;">Verification takes 15 minutes. Delaying takes profit.</p>
+    </div>
+
+    <div class="verification-quote">
+      <h2 style="color: var(--primary); margin-top: 0;">Our Verification Standards</h2>
+      <p style="font-size: 1.1rem; opacity: 0.9;">We utilize a proprietary internal benchmark to identify potential leaks quickly. However, to provide a definitive audit of your overall benefits, our team requires <strong>one business day</strong> once your documentation is received.</p>
+      <p style="font-weight: 700; margin-top: 20px; margin-bottom: 0;">Thoroughness over speed. Precision over guesswork.</p>
     </div>
 
     <footer class="footer-note">
