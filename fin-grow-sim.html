@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fiduciary Growth Simulator | Strategic Capital Analysis</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #0f172a;
+      --accent: #b8974d;
+      --accent-light: #fdfaf3;
+      --profit: #059669;
+      --loss: #e11d48;
+      --text-main: #1e293b;
+      --text-muted: #475569;
+      --white: #ffffff;
+      --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f1f5f9;
+      color: var(--text-main);
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .simulator-container {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 60px;
+      max-width: 1100px;
+      width: 100%;
+      box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    .simulator-container::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 8px;
+      background: var(--accent);
+      border-radius: 4px 4px 0 0;
+    }
+
+    .sim-header { 
+      text-align: center; 
+      margin-bottom: 50px; 
+      border-bottom: 1px solid var(--border); 
+      padding-bottom: 30px; 
+    }
+
+    .sim-header h1 { 
+      font-family: 'Playfair Display', serif; 
+      font-size: 2.8rem; 
+      color: var(--primary); 
+      margin-bottom: 15px; 
+      font-weight: 900;
+    }
+
+    .input-wrapper { 
+      max-width: 600px; 
+      margin: 0 auto 60px auto; 
+      text-align: center;
+    }
+
+    .input-label { 
+      display: block; 
+      font-weight: 800; 
+      text-transform: uppercase; 
+      letter-spacing: 2px; 
+      font-size: 0.9rem; 
+      margin-bottom: 20px; 
+      color: var(--accent); 
+    }
+
+    .revenue-input { 
+      width: 100%; 
+      padding: 25px; 
+      border: 2px solid var(--primary); 
+      border-radius: 4px; 
+      font-size: 2.5rem; 
+      font-weight: 900; 
+      text-align: center; 
+      color: var(--primary); 
+      background: var(--accent-light);
+      transition: all 0.3s;
+    }
+
+    .simulator-grid { 
+      display: grid; 
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 25px; 
+    }
+
+    .sim-card { 
+      background: #fdfdfd; 
+      padding: 35px; 
+      border: 1px solid var(--border); 
+      border-radius: 4px; 
+      transition: all 0.2s; 
+    }
+
+    .sim-card:hover { 
+      transform: translateY(-5px); 
+      border-color: var(--accent); 
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+
+    .sim-card h4 { 
+      font-size: 0.75rem; 
+      text-transform: uppercase; 
+      letter-spacing: 2px; 
+      color: var(--accent); 
+      margin-bottom: 15px; 
+      font-weight: 800; 
+    }
+
+    .sim-val { 
+      font-size: 1.85rem; 
+      font-weight: 900; 
+      color: var(--primary); 
+      margin-bottom: 10px; 
+    }
+
+    .sim-desc { 
+      font-size: 0.9rem; 
+      color: var(--text-muted); 
+      line-height: 1.6; 
+    }
+
+    /* Strategic Reinvestment Highlight */
+    .highlight-strip { 
+      background: var(--primary); 
+      color: white; 
+      grid-column: span 3; 
+      padding: 30px 40px; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      border-radius: 4px; 
+    }
+
+    .highlight-strip .msg { font-weight: 700; font-size: 1.3rem; max-width: 50%; }
+    .highlight-strip .stat-wrap { text-align: right; }
+    .highlight-strip .stat { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--accent); font-weight: 900; display: block;}
+    .highlight-strip .sub { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; }
+
+    .coi-ticker { 
+      grid-column: span 3; 
+      background: #fff1f2; 
+      border: 1px solid #fda4af; 
+      padding: 20px; 
+      color: var(--loss); 
+      text-align: center; 
+      font-weight: 800; 
+      font-size: 1.2rem; 
+      border-radius: 4px; 
+    }
+
+    .cta-footer {
+      margin-top: 60px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      padding-top: 50px;
+    }
+
+    .btn {
+      background: var(--primary);
+      color: white;
+      padding: 25px 50px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.1rem;
+      border-radius: 4px;
+      display: inline-block;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .btn:hover { background: #000; transform: translateY(-2px); }
+
+    @media (max-width: 950px) { 
+      .simulator-grid { grid-template-columns: 1fr; } 
+      .highlight-strip { flex-direction: column; text-align: center; gap: 20px; } 
+      .highlight-strip .msg { max-width: 100%; }
+      .highlight-strip .stat-wrap { text-align: center; }
+      .highlight-strip, .coi-ticker { grid-column: span 1; } 
+    }
+  </style>
+</head>
+<body>
+
+<div class="simulator-container">
+  <div class="sim-header">
+    <h1>Fiduciary Growth Simulator</h1>
+    <p>Forensic Capital Recovery & Reinvestment Logic for Business Owners</p>
+  </div>
+
+  <div class="input-wrapper">
+    <label class="input-label">Reported Annual Revenue ($)</label>
+    <input type="text" id="inp-rev" class="revenue-input" placeholder="10,000,000" oninput="formatAndCalculate(this)">
+  </div>
+
+  <div class="simulator-grid">
+    <!-- RECOVERY -->
+    <div class="sim-card">
+      <h4>Annual Profit Recovery (1%)</h4>
+      <div id="v-found" class="sim-val" style="color: var(--profit);">$0</div>
+      <div class="sim-desc">Net profit "found" in overhead. Unlike sales revenue, this is 100% margin.</div>
+    </div>
+
+    <!-- SALES TOIL -->
+    <div class="sim-card">
+      <h4>Sales Effort Avoided</h4>
+      <div id="v-effort" class="sim-val">$0</div>
+      <div class="sim-desc">New revenue required to generate this same net profit (assuming 10% net margin).</div>
+    </div>
+
+    <!-- BORROWING -->
+    <div class="sim-card">
+      <h4>New Equipment Leverage</h4>
+      <div id="v-debt" class="sim-val">$0</div>
+      <div class="sim-desc">Additional expansion capital unlocked via improved Debt-Service Coverage (5x leverage).</div>
+    </div>
+
+    <!-- EXIT VALUE STRIP -->
+    <div class="highlight-strip">
+      <div class="msg">Total Strategic Equity Value Created via Bottom-Line Optimization</div>
+      <div class="stat-wrap">
+        <span id="v-equity" class="stat">$0</span>
+        <span class="sub">Calculated on a conservative 5x EBITDA Multiple</span>
+      </div>
+    </div>
+
+    <!-- CUSTOMER ACQUISITION -->
+    <div class="sim-card">
+      <h4>Acquisition Funding</h4>
+      <div id="v-acq" class="sim-val">0 New Clients</div>
+      <div class="sim-desc">Fully funded high-value customer acquisitions based on a $2,500 CAC baseline.</div>
+    </div>
+
+    <!-- SHOP CAPACITY -->
+    <div class="sim-card">
+      <h4>Shop Capacity Added</h4>
+      <div id="v-labor" class="sim-val">0 Hours</div>
+      <div class="sim-desc">Additional production labor hours funded by recovered overhead (at $40/hr burdened).</div>
+    </div>
+
+    <!-- BID MARGIN -->
+    <div class="sim-card">
+      <h4>Bid Margin Advantage</h4>
+      <div id="v-bid" class="sim-val">1.0%</div>
+      <div class="sim-desc">Your ability to lower contract bids while maintaining your current personal take-home.</div>
+    </div>
+
+    <!-- DAILY PENALTY -->
+    <div id="ticker-box" class="coi-ticker" style="display:none;">
+      ACTION ALERT: Delaying this audit costs your business <span id="v-day">$0</span> per working day.
+    </div>
+  </div>
+
+  <div class="cta-footer">
+    <a href="mailto:gregwsheldon@gmail.com?subject=Simulator%20Verification%20Request" class="btn">Verify Your Recovery Potential</a>
+  </div>
+</div>
+
+<script>
+  function formatAndCalculate(input) {
+    let value = input.value.replace(/,/g, '');
+    if (value && !isNaN(value)) {
+      input.value = parseFloat(value).toLocaleString('en-US');
+    }
+    updateSim(parseFloat(value));
+  }
+
+  function updateSim(rev) {
+    const tick = document.getElementById('ticker-box');
+    if (!rev || rev <= 0) { tick.style.display = "none"; return; }
+    tick.style.display = "block";
+
+    const recover = rev * 0.01;
+    const f = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+
+    // Profit Recovery
+    document.getElementById('v-found').innerText = f.format(recover);
+    
+    // Sales Effort (Money / Margin)
+    document.getElementById('v-effort').innerText = f.format(recover / 0.10);
+    
+    // Equipment Leverage (Money * 5)
+    document.getElementById('v-debt').innerText = f.format(recover * 5);
+    
+    // Equity Value (Money * 5)
+    document.getElementById('v-equity').innerText = f.format(recover * 5);
+    
+    // Acquisition (Money / CAC)
+    document.getElementById('v-acq').innerText = Math.floor(recover / 2500).toLocaleString() + " New Clients";
+    
+    // Labor Hours (Money / $40/hr)
+    document.getElementById('v-labor').innerText = Math.floor(recover / 40).toLocaleString() + " Hours";
+    
+    // Daily Penalty (Money / 260 business days)
+    document.getElementById('v-day').innerText = f.format(recover / 260); 
+  }
+</script>
+
+</body>
+</html>
