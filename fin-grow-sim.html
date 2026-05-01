@@ -94,7 +94,6 @@
       text-align: center; 
       color: var(--primary); 
       background: var(--accent-light);
-      transition: all 0.3s;
     }
 
     .simulator-grid { 
@@ -114,7 +113,6 @@
     .sim-card:hover { 
       transform: translateY(-5px); 
       border-color: var(--accent); 
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     }
 
     .sim-card h4 { 
@@ -139,7 +137,6 @@
       line-height: 1.6; 
     }
 
-    /* Strategic Reinvestment Highlight */
     .highlight-strip { 
       background: var(--primary); 
       color: white; 
@@ -151,10 +148,7 @@
       border-radius: 4px; 
     }
 
-    .highlight-strip .msg { font-weight: 700; font-size: 1.3rem; max-width: 50%; }
-    .highlight-strip .stat-wrap { text-align: right; }
-    .highlight-strip .stat { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--accent); font-weight: 900; display: block;}
-    .highlight-strip .sub { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; }
+    .highlight-strip .stat { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--accent); font-weight: 900; }
 
     .coi-ticker { 
       grid-column: span 3; 
@@ -166,6 +160,20 @@
       font-weight: 800; 
       font-size: 1.2rem; 
       border-radius: 4px; 
+    }
+
+    /* Disclaimer Styling */
+    .disclaimer-box {
+      grid-column: span 3;
+      margin-top: 20px;
+      padding: 20px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-style: italic;
     }
 
     .cta-footer {
@@ -184,19 +192,14 @@
       font-size: 1.1rem;
       border-radius: 4px;
       display: inline-block;
-      transition: all 0.3s;
       text-transform: uppercase;
       letter-spacing: 2px;
     }
 
-    .btn:hover { background: #000; transform: translateY(-2px); }
-
     @media (max-width: 950px) { 
       .simulator-grid { grid-template-columns: 1fr; } 
-      .highlight-strip { flex-direction: column; text-align: center; gap: 20px; } 
-      .highlight-strip .msg { max-width: 100%; }
-      .highlight-strip .stat-wrap { text-align: center; }
-      .highlight-strip, .coi-ticker { grid-column: span 1; } 
+      .highlight-strip, .coi-ticker, .disclaimer-box { grid-column: span 1; } 
+      .highlight-strip { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -205,7 +208,7 @@
 <div class="simulator-container">
   <div class="sim-header">
     <h1>Fiduciary Growth Simulator</h1>
-    <p>Forensic Capital Recovery & Reinvestment Logic for Business Owners</p>
+    <p>Strategic Capital Recovery Analysis for Enterprise Leadership</p>
   </div>
 
   <div class="input-wrapper">
@@ -214,60 +217,54 @@
   </div>
 
   <div class="simulator-grid">
-    <!-- RECOVERY -->
     <div class="sim-card">
       <h4>Annual Profit Recovery (1%)</h4>
       <div id="v-found" class="sim-val" style="color: var(--profit);">$0</div>
-      <div class="sim-desc">Net profit "found" in overhead. Unlike sales revenue, this is 100% margin.</div>
+      <div class="sim-desc">Net profit "found" in overhead. Conservative baseline based on typical forensic audit results.</div>
     </div>
 
-    <!-- SALES TOIL -->
     <div class="sim-card">
       <h4>Sales Effort Avoided</h4>
       <div id="v-effort" class="sim-val">$0</div>
       <div class="sim-desc">New revenue required to generate this same net profit (assuming 10% net margin).</div>
     </div>
 
-    <!-- BORROWING -->
     <div class="sim-card">
       <h4>New Equipment Leverage</h4>
       <div id="v-debt" class="sim-val">$0</div>
       <div class="sim-desc">Additional expansion capital unlocked via improved Debt-Service Coverage (5x leverage).</div>
     </div>
 
-    <!-- EXIT VALUE STRIP -->
     <div class="highlight-strip">
       <div class="msg">Total Strategic Equity Value Created via Bottom-Line Optimization</div>
-      <div class="stat-wrap">
-        <span id="v-equity" class="stat">$0</span>
-        <span class="sub">Calculated on a conservative 5x EBITDA Multiple</span>
-      </div>
+      <div class="stat-wrap"><span id="v-equity" class="stat">$0</span></div>
     </div>
 
-    <!-- CUSTOMER ACQUISITION -->
     <div class="sim-card">
       <h4>Acquisition Funding</h4>
       <div id="v-acq" class="sim-val">0 New Clients</div>
       <div class="sim-desc">Fully funded high-value customer acquisitions based on a $2,500 CAC baseline.</div>
     </div>
 
-    <!-- SHOP CAPACITY -->
     <div class="sim-card">
       <h4>Shop Capacity Added</h4>
       <div id="v-labor" class="sim-val">0 Hours</div>
       <div class="sim-desc">Additional production labor hours funded by recovered overhead (at $40/hr burdened).</div>
     </div>
 
-    <!-- BID MARGIN -->
     <div class="sim-card">
       <h4>Bid Margin Advantage</h4>
       <div id="v-bid" class="sim-val">1.0%</div>
       <div class="sim-desc">Your ability to lower contract bids while maintaining your current personal take-home.</div>
     </div>
 
-    <!-- DAILY PENALTY -->
     <div id="ticker-box" class="coi-ticker" style="display:none;">
-      ACTION ALERT: Delaying this audit costs your business <span id="v-day">$0</span> per working day.
+      Estimated Delay Penalty: <span id="v-day">$0</span> per business day.
+    </div>
+
+    <!-- REINFORCED DISCLAIMER -->
+    <div class="disclaimer-box">
+      <strong>Important Disclosure:</strong> The figures provided by this simulator are for illustrative and educational purposes only. They are built on conservative industry benchmarks and are intended to demonstrate the potential economic impact of forensic recovery. These numbers do not represent a guaranteed amount of funds to be received or recovered. Actual results vary based on specific banking structures, historical credit usage, and transactional volume.
     </div>
   </div>
 
@@ -293,25 +290,12 @@
     const recover = rev * 0.01;
     const f = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
 
-    // Profit Recovery
     document.getElementById('v-found').innerText = f.format(recover);
-    
-    // Sales Effort (Money / Margin)
     document.getElementById('v-effort').innerText = f.format(recover / 0.10);
-    
-    // Equipment Leverage (Money * 5)
     document.getElementById('v-debt').innerText = f.format(recover * 5);
-    
-    // Equity Value (Money * 5)
     document.getElementById('v-equity').innerText = f.format(recover * 5);
-    
-    // Acquisition (Money / CAC)
     document.getElementById('v-acq').innerText = Math.floor(recover / 2500).toLocaleString() + " New Clients";
-    
-    // Labor Hours (Money / $40/hr)
     document.getElementById('v-labor').innerText = Math.floor(recover / 40).toLocaleString() + " Hours";
-    
-    // Daily Penalty (Money / 260 business days)
     document.getElementById('v-day').innerText = f.format(recover / 260); 
   }
 </script>
